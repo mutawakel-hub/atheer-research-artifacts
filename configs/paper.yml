@@ -1,0 +1,48 @@
+# Paper configuration (S1 vs S2 only) — Network-only comparison
+meta:
+  paper: "DTISD 2026"
+  section: "VI"
+  notes: "Network-only: same bank capacity across scenarios to isolate network effect."
+
+experiment:
+  load_points_tps: [1, 5, 10, 20, 30, 40, 50]
+  warmup_s: 5
+  measure_s: 60
+  num_runs: 5
+  base_seed: 20260211
+
+bank:
+  capacity: 12
+  service_time_s: 0.02
+  local_time_s: 0.05
+
+scenarios:
+  - key: "S1_PUBLIC"
+    name: "S1: Public Internet"
+    network:
+      latency_mean_s: 0.400
+      latency_std_s: 0.200
+      packet_loss: 0.10
+      retries: 2
+    timeouts:
+      queue_timeout_s: 12.0
+      e2e_timeout_s: 15.0
+    degradation:
+      enabled: true
+      threshold_tps: 10.0
+      latency_alpha: 0.75
+      loss_alpha: 1.25
+      max_loss: 0.35
+
+  - key: "S2_PRIVATE"
+    name: "S2: Private APN (Atheer) [Network-only]"
+    network:
+      latency_mean_s: 0.060
+      latency_std_s: 0.015
+      packet_loss: 0.001
+      retries: 1
+    timeouts:
+      queue_timeout_s: 4.0
+      e2e_timeout_s: 5.0
+    degradation:
+      enabled: false
