@@ -5,9 +5,9 @@ type: software
 authors:
   - family-names: "Al-Mutawakel"
     given-names: "Ahmed Ali Mohammed Hasan"
-repository-code: "https://github.com/mutawakel-hub/atheer_sim_professional"
-url: "https://github.com/mutawakel-hub/atheer_sim_professional"
-version: "v1.0.0"
+repository-code: 'https://github.com/mutawakel-hub/atheer-research-artifacts'
+url: 'https://github.com/mutawakel-hub/atheer-research-artifacts'
+version: "1.0.0"
 date-released: "2026-02-11"
 license: "MIT"
 keywords:
