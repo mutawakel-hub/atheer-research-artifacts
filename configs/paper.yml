@@ -8,7 +8,7 @@ experiment:
   load_points_tps: [1, 5, 10, 20, 30, 40, 50]
   warmup_s: 5
   measure_s: 60
-  num_runs: 5
+  num_runs: 30
   base_seed: 20260211
 
 bank:
