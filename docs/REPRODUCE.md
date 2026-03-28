@@ -1,6 +1,7 @@
-# Reproducing Section VI
 
-This guide reproduces the Section VI simulation artifact directly from this repository.
+# Reproducing Section VI (4-Layer E2E Model)
+
+This guide reproduces the Section VI simulation artifact for the full 4-layer Atheer system (Edge, Network, Switch, Bank).
 
 ## 1) Install dependencies
 
@@ -24,6 +25,7 @@ Run from the repository root:
 python atheer_sim.py
 ```
 
+
 ## 3) Expected outputs
 
 The run creates timestamped files under `outputs/`:
@@ -39,6 +41,7 @@ The run creates timestamped files under `outputs/`:
   - `outputs/table_wide_YYYYMMDD_HHMMSS.tex`
 - Failure breakdown:
   - `outputs/failure_breakdown_YYYYMMDD_HHMMSS.csv`
+- **Switch Overhead (Mean±CI)** is included in all summary tables for IEEE reporting.
 
 ## 4) Optional: build paper tables from an existing raw CSV
 

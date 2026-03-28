@@ -48,7 +48,11 @@ def main():
         succ = g.loc[ok, "duration_s"]
         p95 = float(succ.quantile(0.95)) if len(succ) else np.nan
         p99 = float(succ.quantile(0.99)) if len(succ) else np.nan
-        return pd.Series({"SuccessRate": sr, "P95": p95, "P99": p99})
+        # Switch Overhead (mean for successful tx)
+        switch = g.loc[ok, "switch_overhead_s"] if "switch_overhead_s" in g else pd.Series(dtype=float)
+        switch_mean = float(switch.mean()) if len(switch) else np.nan
+        switch_std = float(switch.std()) if len(switch) else np.nan
+        return pd.Series({"SuccessRate": sr, "P95": p95, "P99": p99, "SwitchOverhead": switch_mean, "SwitchOverheadStd": switch_std})
 
     per_run = df.groupby(["Scenario","Load_TPS","Run"]).apply(per_run_metrics).reset_index()
     agg = per_run.groupby(["Scenario","Load_TPS"]).agg(
@@ -58,18 +62,21 @@ def main():
         P95_std=("P95","std"),
         P99_mean=("P99","mean"),
         P99_std=("P99","std"),
+        SwitchOverhead_mean=("SwitchOverhead","mean"),
+        SwitchOverhead_std=("SwitchOverheadStd","mean"),
         N=("Run","nunique"),
     ).reset_index()
 
-    for m in ["SR","P95","P99"]:
-        agg[f"{m}_CI_L"] = agg.apply(lambda r: ci95(r[f"{m}_mean"], r[f"{m}_std"], int(r["N"]))[0], axis=1)
-        agg[f"{m}_CI_U"] = agg.apply(lambda r: ci95(r[f"{m}_mean"], r[f"{m}_std"], int(r["N"]))[1], axis=1)
+    for m in ["SR","P95","P99","SwitchOverhead"]:
+        agg[f"{m}_CI_L"] = agg.apply(lambda r: ci95(r[f"{m}_mean"], r.get(f"{m}_std", 0.0), int(r["N"]))[0], axis=1)
+        agg[f"{m}_CI_U"] = agg.apply(lambda r: ci95(r[f"{m}_mean"], r.get(f"{m}_std", 0.0), int(r["N"]))[1], axis=1)
 
     agg["SuccessRate (Mean±CI)"] = agg.apply(lambda r: f'{r["SR_mean"]:.2f} ± {(r["SR_CI_U"]-r["SR_mean"]):.2f}', axis=1)
     agg["P95 (Mean±CI)"] = agg.apply(lambda r: f'{r["P95_mean"]:.3f} ± {(r["P95_CI_U"]-r["P95_mean"]):.3f}', axis=1)
     agg["P99 (Mean±CI)"] = agg.apply(lambda r: f'{r["P99_mean"]:.3f} ± {(r["P99_CI_U"]-r["P99_mean"]):.3f}', axis=1)
+    agg["SwitchOverhead (Mean±CI)"] = agg.apply(lambda r: f'{r["SwitchOverhead_mean"]:.4f} ± {(r["SwitchOverhead_CI_U"]-r["SwitchOverhead_mean"]):.4f}', axis=1)
 
-    table = agg[["Scenario","Load_TPS","SuccessRate (Mean±CI)","P95 (Mean±CI)","P99 (Mean±CI)"]].sort_values(["Scenario","Load_TPS"])
+    table = agg[["Scenario","Load_TPS","SuccessRate (Mean±CI)","P95 (Mean±CI)","P99 (Mean±CI)","SwitchOverhead (Mean±CI)"]].sort_values(["Scenario","Load_TPS"])
 
     max_load = float(args.max_load) if args.max_load is not None else float(df["Load_TPS"].max())
     high = df[df["Load_TPS"] == max_load].copy()

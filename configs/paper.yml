@@ -33,6 +33,11 @@ scenarios:
       latency_alpha: 0.75
       loss_alpha: 1.25
       max_loss: 0.35
+    switch:
+      redis_mean_s: 0.002
+      redis_std_s: 0.0005
+      mongo_mean_s: 0.005
+      mongo_std_s: 0.001
 
   - key: "S2_PRIVATE"
     name: "S2: Private APN (Atheer) [Network-only]"
@@ -46,3 +51,8 @@ scenarios:
       e2e_timeout_s: 5.0
     degradation:
       enabled: false
+    switch:
+      redis_mean_s: 0.002
+      redis_std_s: 0.0005
+      mongo_mean_s: 0.005
+      mongo_std_s: 0.001

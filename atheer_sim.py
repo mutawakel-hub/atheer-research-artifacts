@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Tuple
 from pathlib import Path
 from datetime import datetime
 
@@ -34,6 +34,7 @@ class ScenarioConfig:
     # Offline local processing (e.g., NFC tap)
     local_time_s: float = 0.05    # 50ms
 
+
     # Degradation (applies only if enabled)
     enable_degradation: bool = False
     degrade_threshold_tps: float = 10.0
@@ -41,8 +42,14 @@ class ScenarioConfig:
     degrade_loss_alpha: float = 1.50
     degrade_max_loss: float = 0.30
 
+    # Switch micro-latency (set below per scenario)
+    switch_redis_mean: float = 0.002
+    switch_redis_std: float = 0.0005
+    switch_mongo_mean: float = 0.005
+    switch_mongo_std: float = 0.001
 
-# Two main scenarios only (Priority removed)
+
+ # Two main scenarios: S1 (Public Internet), S2 (Private APN). No legacy priority logic remains.
 SCENARIOS = [
     ScenarioConfig(
         key="S1_PUBLIC",
@@ -59,6 +66,10 @@ SCENARIOS = [
         degrade_latency_alpha=0.75,
         degrade_loss_alpha=1.25,
         degrade_max_loss=0.35,
+        switch_redis_mean=0.002,
+        switch_redis_std=0.0005,
+        switch_mongo_mean=0.005,
+        switch_mongo_std=0.001,
     ),
     ScenarioConfig(
         key="S2_PRIVATE",
@@ -71,6 +82,10 @@ SCENARIOS = [
         e2e_timeout_s=5.0,
         bank_capacity=12,      # SAME as S1 to isolate network effect
         enable_degradation=False,
+        switch_redis_mean=0.002,
+        switch_redis_std=0.0005,
+        switch_mongo_mean=0.005,
+        switch_mongo_std=0.001,
     ),
 ]
 
@@ -106,9 +121,8 @@ def ci95(mean: float, std: float, n: int) -> Tuple[float, float]:
     half = 1.96 * (std / math.sqrt(n))
     return mean - half, mean + half
 
-
 # =========================
-# Simulation Core
+# Simulation Core (4-Layer E2E Model)
 # =========================
 
 class PaymentSystem:
@@ -118,6 +132,8 @@ class PaymentSystem:
         self.offered_tps = offered_tps
         self.rng = rng
         self.bank = simpy.Resource(env, capacity=cfg.bank_capacity)
+        # New: Switch resource (stateless, but can be used for future concurrency limits)
+        self.switch = simpy.Resource(env, capacity=1000)
         self.stats = []
 
     def effective_network_params(self) -> Tuple[float, float, float]:
@@ -175,51 +191,60 @@ class PaymentSystem:
         start_time = self.env.now
         in_measure_window = (start_time >= WARMUP_S) and (start_time <= WARMUP_S + MEASURE_S)
 
-        # 1) Local
+        # 1) Edge Layer: Local Processing (NFC, HCE)
         yield self.env.timeout(self.cfg.local_time_s)
 
         # Early E2E
         if (self.env.now - start_time) > self.cfg.e2e_timeout_s:
             if in_measure_window:
-                self.record(tx_id, start_time, "FAILED", "FAILED_E2E_TIMEOUT", 0, 0, 0.0, 0.0)
+                self.record(tx_id, start_time, "FAILED", "FAILED_E2E_TIMEOUT", 0, 0, 0.0, 0.0, 0.0)
             return
 
-        # 2) Uplink
+        # 2) Network Layer: Uplink
         uplink = self.env.process(self.transmit_with_retries("UPLINK", start_time))
         uplink_ok, uplink_attempts, uplink_time, uplink_reason = yield uplink
 
         if not uplink_ok:
             if in_measure_window:
                 self.record(tx_id, start_time, "FAILED", uplink_reason or "FAILED_UPLINK_NETWORK",
-                            uplink_attempts, 0, 0.0, uplink_time)
+                            uplink_attempts, 0, 0.0, uplink_time, 0.0)
             return
 
-        # 3) Bank queue + service
-        if (self.env.now - start_time) > self.cfg.e2e_timeout_s:
-            if in_measure_window:
-                self.record(tx_id, start_time, "FAILED", "FAILED_E2E_TIMEOUT", uplink_attempts, 0, 0.0, uplink_time)
-            return
+        # 3) Processing Layer: Atheer Switch (Redis + MongoDB + Logic)
+        switch_overhead = 0.0
+        with self.switch.request() as switch_req:
+            yield switch_req
+            # Redis idempotency check
+            redis_lat = float(self.rng.normal(self.cfg.switch_redis_mean, self.cfg.switch_redis_std))
+            redis_lat = max(0.0001, redis_lat)
+            yield self.env.timeout(redis_lat)
+            # Bank queue + service
+            if (self.env.now - start_time) > self.cfg.e2e_timeout_s:
+                if in_measure_window:
+                    self.record(tx_id, start_time, "FAILED", "FAILED_E2E_TIMEOUT", uplink_attempts, 0, 0.0, uplink_time, switch_overhead)
+                return
+            req = self.bank.request()
+            q_start = self.env.now
+            results = yield req | self.env.timeout(self.cfg.queue_timeout_s)
+            if req not in results:
+                try:
+                    req.cancel()
+                except Exception:
+                    pass
+                if in_measure_window:
+                    self.record(tx_id, start_time, "FAILED", "FAILED_QUEUE_TIMEOUT",
+                                uplink_attempts, 0, self.env.now - q_start, uplink_time, switch_overhead)
+                return
+            queue_wait = self.env.now - q_start
+            yield self.env.timeout(self.cfg.service_time_s)
+            self.bank.release(req)
+            # MongoDB token burn
+            mongo_lat = float(self.rng.normal(self.cfg.switch_mongo_mean, self.cfg.switch_mongo_std))
+            mongo_lat = max(0.0001, mongo_lat)
+            yield self.env.timeout(mongo_lat)
+            switch_overhead = redis_lat + mongo_lat
 
-        req = self.bank.request()
-        q_start = self.env.now
-        results = yield req | self.env.timeout(self.cfg.queue_timeout_s)
-
-        if req not in results:
-            try:
-                req.cancel()
-            except Exception:
-                pass
-
-            if in_measure_window:
-                self.record(tx_id, start_time, "FAILED", "FAILED_QUEUE_TIMEOUT",
-                            uplink_attempts, 0, self.env.now - q_start, uplink_time)
-            return
-
-        queue_wait = self.env.now - q_start
-        yield self.env.timeout(self.cfg.service_time_s)
-        self.bank.release(req)
-
-        # 4) Downlink
+        # 4) Network Layer: Downlink
         downlink = self.env.process(self.transmit_with_retries("DOWNLINK", start_time))
         downlink_ok, downlink_attempts, downlink_time, downlink_reason = yield downlink
 
@@ -228,22 +253,22 @@ class PaymentSystem:
         if not downlink_ok:
             if in_measure_window:
                 self.record(tx_id, start_time, "FAILED", downlink_reason or "FAILED_DOWNLINK_NETWORK",
-                            uplink_attempts, downlink_attempts, queue_wait, net_time)
+                            uplink_attempts, downlink_attempts, queue_wait, net_time, switch_overhead)
             return
 
         total_duration = self.env.now - start_time
         if total_duration > self.cfg.e2e_timeout_s:
             if in_measure_window:
                 self.record(tx_id, start_time, "FAILED", "FAILED_E2E_TIMEOUT",
-                            uplink_attempts, downlink_attempts, queue_wait, net_time)
+                            uplink_attempts, downlink_attempts, queue_wait, net_time, switch_overhead)
             return
 
         if in_measure_window:
             self.record(tx_id, start_time, "SUCCESS", "NONE",
-                        uplink_attempts, downlink_attempts, queue_wait, net_time)
+                        uplink_attempts, downlink_attempts, queue_wait, net_time, switch_overhead)
 
     def record(self, tx_id: int, start_time: float, status: str, reason: str,
-               uplink_attempts: int, downlink_attempts: int, queue_wait_s: float, net_time_s: float):
+               uplink_attempts: int, downlink_attempts: int, queue_wait_s: float, net_time_s: float, switch_overhead_s: float):
         end_time = self.env.now
         self.stats.append({
             "tx_id": tx_id,
@@ -256,6 +281,7 @@ class PaymentSystem:
             "downlink_attempts": downlink_attempts,
             "queue_wait_s": queue_wait_s,
             "net_time_s": net_time_s,
+            "switch_overhead_s": switch_overhead_s,
             "bank_service_s": self.cfg.service_time_s,
             "local_time_s": self.cfg.local_time_s,
         })
@@ -453,7 +479,7 @@ def build_summary_tables(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
 # =========================
 
 if __name__ == "__main__":
-    print("Starting Atheer Simulation Evaluation (Improved, No-Priority)...")
+    print("Starting Atheer Simulation Evaluation (4-Layer E2E Model)...")
     results = run_simulation()
 
     if results.empty:

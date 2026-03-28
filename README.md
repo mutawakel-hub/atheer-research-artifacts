@@ -2,7 +2,14 @@
 
 This repository is a **reproducibility artifact** for the simulation-based evaluation of the "Atheer" system as described in **Section VI** of the research paper.
 
-This repository aims to enable researchers and developers to reproduce and confirm the published results, ensuring scientific transparency and reliability.
+
+This repository enables researchers and developers to reproduce and confirm the published results, ensuring scientific transparency and reliability.
+**Now simulates a full 4-layer End-to-End (E2E) system:**
+
+1. **Edge Layer (SDK):** Local NFC tap and HCE cryptogram generation.
+2. **Network Layer (Transport):** Uplink/Downlink via S1 (Public Internet) or S2 (Private APN), with packet loss and latency.
+3. **Processing Layer (Atheer Switch):** Stateless Node.js middleware with Redis (idempotency) and MongoDB (token burn) micro-latencies.
+4. **Integration Layer (Core Bank):** Bank processing via API adapters.
 
 ## 📄 Reproducible Results
 
@@ -13,12 +20,12 @@ This repository reproduces (from the same simulation run) the following figures 
 *   **Table IV** — Aggregated Performance Summary (Mean ± 95% CI)
 *   **Table V** — Failure Breakdown at Max Load (50 TPS) (%)
 
-> **Scope Note:** This artifact currently evaluates **S1 vs S2 (Network-only)**:
-> 
-> *   S1: Public Internet
-> *   S2: Private APN (Atheer)
-> 
-> The parameters used are defined in `atheer_sim.py` (see `SCENARIOS`, `LOAD_POINTS_TPS`, etc.).
+
+> **Scope Note:**
+> - This artifact now evaluates the **full E2E system** (Edge, Network, Switch, Bank).
+> - S1: Public Internet
+> - S2: Private APN (Atheer)
+> - The simulation parameters are defined in `atheer_sim.py` and mirrored in `configs/paper.yml` for documentation.
 
 ## 📂 Repository Layout
 
@@ -74,37 +81,46 @@ To reproduce the results, follow these steps:
     # setx MPLBACKEND Agg
     ```
 
-## 📊 Expected Outputs
+
+## 📊 Expected Outputs & KPIs
 
 Running `python atheer_sim.py` will create an `outputs/` folder and write timestamped files within it:
 
-*   **Raw per-transaction CSV file:**
-    *   `outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv`
-*   **Figures (Plots):**
-    *   `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.png`
-    *   `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.png`
-*   **Summary Tables:**
-    *   `outputs/agg_long_YYYYMMDD_HHMMSS.csv`
-    *   `outputs/agg_wide_YYYYMMDD_HHMMSS.csv`
-    *   `outputs/table_wide_YYYYMMDD_HHMMSS.tex`
-*   **Failure Breakdown (at max load, e.g., 50 TPS):**
-    *   `outputs/failure_breakdown_YYYYMMDD_HHMMSS.csv`
+* **Raw per-transaction CSV file:**
+    * `outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv`
+* **Figures (Plots):**
+    * `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.png`
+    * `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.png`
+* **Summary Tables:**
+    * `outputs/agg_long_YYYYMMDD_HHMMSS.csv`
+    * `outputs/agg_wide_YYYYMMDD_HHMMSS.csv`
+    * `outputs/table_wide_YYYYMMDD_HHMMSS.tex`
+* **Failure Breakdown (at max load, e.g., 50 TPS):**
+    * `outputs/failure_breakdown_YYYYMMDD_HHMMSS.csv`
+
+**Key Performance Indicators (KPIs):**
+- **Switch Overhead:** Total time spent inside the Atheer Switch (Redis + MongoDB + Logic). Must prove it's < 20ms.
+- **End-to-End Latency:** Total time from NFC tap to Merchant Screen response.
+- **Success Rate under Load:** Including transactions dropped due to network timeouts vs. successfully processed E2E.
+
 
 ## 📝 Optional: Build Paper Tables from an Existing Raw CSV
 
-If you already have a raw simulation CSV and wish to generate paper-ready tables, use the following command:
+If you already have a raw simulation CSV and wish to generate paper-ready tables (including Switch Overhead), use the following command:
 
 ```shell
 python tools/build_paper_tables.py \
-  --raw outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv \
-  --out paper_artifacts
+    --raw outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv \
+    --out paper_artifacts
 ```
 
-This will write the table artifacts into the `paper_artifacts/` folder.
+This will write the table artifacts into the `paper_artifacts/` folder, including the "Switch Overhead (Mean±CI)" column for IEEE tables.
+
 
 ## 🐛 Troubleshooting
 
-*   **Matplotlib issue on headless servers:** If you encounter issues when running the simulation on a headless server, ensure that the Matplotlib backend is set as described in the "Run the Simulation" section above.
+* **Matplotlib issue on headless servers:** If you encounter issues when running the simulation on a headless server, ensure that the Matplotlib backend is set as described in the "Run the Simulation" section above.
+* **Switch/Layer parameters:** If you change Switch micro-latency parameters, update both `atheer_sim.py` and `configs/paper.yml` for documentation consistency.
 
 ## 🤝 Contributing
 

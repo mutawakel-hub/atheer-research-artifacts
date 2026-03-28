@@ -7,3 +7,4 @@ Suggested mapping (Table III ↔ config):
 - queue_timeout_s, e2e_timeout_s
 - bank capacity, service_time_s, local_time_s
 - degradation settings (S1 only)
+- **switch.redis_mean, switch.redis_std, switch.mongo_mean, switch.mongo_std** (Switch micro-latencies)
