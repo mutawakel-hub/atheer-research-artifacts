@@ -32,7 +32,7 @@ This repository reproduces (from the same simulation run) the following figures 
 *   `atheer_sim.py` — Main Discrete-Event Simulation (SimPy) file + plotting + table export.
 *   `requirements.txt` — List of required Python dependencies.
 *   `tools/build_paper_tables.py` — Optional helper tool to build paper tables from a raw CSV file.
-*   `configs/paper.yml` — **Documentation mirror** of the paper scenario setup (the current code does **not** directly read YAML files).
+*   `configs/paper.yml` — Configuration file for the paper scenario setup. The simulation reads these parameters directly at runtime.
 *   `docs/` — Contains additional documentation, including `REPRODUCE.md`, `MODEL_ASSUMPTIONS.md`, and `PARAMETERS.md`.
 
 ## ⚙️ Requirements
