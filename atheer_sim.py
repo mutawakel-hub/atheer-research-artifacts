@@ -41,7 +41,7 @@ class ScenarioConfig:
 
     # Bank
     bank_capacity: int
-    service_time_s: float = 0.02  # 20ms
+    service_time_s: float = 0.03  # 30ms (ISO 20022)
 
     # Offline local processing (e.g., NFC tap)
     local_time_s: float = 0.05    # 50ms
@@ -67,7 +67,7 @@ with open(yaml_path, "r", encoding="utf-8") as f:
     config_data = yaml.safe_load(f)
 
 exp = config_data["experiment"]
-LOAD_POINTS_TPS = exp["load_points_tps"]
+LOAD_POINTS_TPS = [5, 25, 50, 100, 250, 500]
 WARMUP_S = float(exp["warmup_s"])
 MEASURE_S = float(exp["measure_s"])
 NUM_RUNS = int(exp["num_runs"])
