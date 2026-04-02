@@ -8,7 +8,7 @@ This repository enables researchers and developers to reproduce and confirm the 
 
 1. **Edge Layer (SDK):** Local NFC tap and HCE cryptogram generation.
 2. **Network Layer (Transport):** Uplink/Downlink via S1 (Public Internet) or S2 (Private APN), with packet loss and latency.
-3. **Processing Layer (Atheer Switch):** Stateless Node.js middleware with Redis (idempotency) and PostgreSQL (transaction storage) micro-latencies.
+3. **Processing Layer (Atheer Switch):** Python-simulated switch with modeled Redis (idempotency) and PostgreSQL (transaction storage) micro-latencies.
 4. **Integration Layer (Core Bank):** Bank processing via API adapters.
 
 ## 📄 Reproducible Results
@@ -18,7 +18,7 @@ This repository reproduces (from the same simulation run) the following figures 
 *   **Fig. 6** — Transaction Success Rate vs Load (Mean ± 95% CI)
 *   **Fig. 7** — P95 End-to-End Latency vs Load (Mean ± 95% CI)
 *   **Table IV** — Aggregated Performance Summary (Mean ± 95% CI)
-*   **Table V** — Failure Breakdown at Max Load (50 TPS) (%)
+*   **Table V** — Failure Breakdown at Max Load (500 TPS) (%)
 
 
 > **Scope Note:**
@@ -44,6 +44,7 @@ This repository reproduces (from the same simulation run) the following figures 
     *   `pandas>=2.0`
     *   `matplotlib>=3.7`
     *   `jinja2>=3.1`
+    *   `pyyaml>=6.0`
 
 ## 🚀 Quick Start
 
@@ -89,13 +90,13 @@ Running `python atheer_sim.py` will create an `outputs/` folder and write timest
 * **Raw per-transaction CSV file:**
     * `outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv`
 * **Figures (Plots):**
-    * `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.png`
-    * `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.png`
+    * `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.{png,pdf,svg}`
+    * `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.{png,pdf,svg}`
 * **Summary Tables:**
     * `outputs/agg_long_YYYYMMDD_HHMMSS.csv`
     * `outputs/agg_wide_YYYYMMDD_HHMMSS.csv`
     * `outputs/table_wide_YYYYMMDD_HHMMSS.tex`
-* **Failure Breakdown (at max load, e.g., 50 TPS):**
+* **Failure Breakdown (at max load, e.g., 500 TPS):**
     * `outputs/failure_breakdown_YYYYMMDD_HHMMSS.csv`
 
 **Key Performance Indicators (KPIs):**

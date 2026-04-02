@@ -33,8 +33,8 @@ The run creates timestamped files under `outputs/`:
 - Raw results CSV:
   - `outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv`
 - Figures:
-  - `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.png`
-  - `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.png`
+  - `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.{png,pdf,svg}`
+  - `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.{png,pdf,svg}`
 - Summary tables:
   - `outputs/agg_long_YYYYMMDD_HHMMSS.csv`
   - `outputs/agg_wide_YYYYMMDD_HHMMSS.csv`

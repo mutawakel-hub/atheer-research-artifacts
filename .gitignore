@@ -35,4 +35,6 @@ _Private_Drafts_And_Tools/
 cleanup.py
 rename_inplace.py
 prepare_images.py
-tools/
+
+# Ignore large output CSV files because Github max file size is 100MB
+outputs/atheer_simulation_results_*.csv
