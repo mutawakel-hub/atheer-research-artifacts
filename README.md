@@ -129,7 +129,28 @@ Contributions to improve this repository are welcome. Please read `CONTRIBUTING.
 
 ## 📚 Citation
 
-If you use this software/repository in your research work, please cite it. GitHub reads the `CITATION.cff` file to display the "Cite this repository" option.
+If you use this software/repository in your research work, please cite it using the following DOI:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19383901.svg)](https://doi.org/10.5281/zenodo.19383901)
+
+**APA format:**
+> Al-Mutawakel, A. A. M. H. (2026). Atheer Simulation Evaluation Artifact (v1.1.1). Zenodo. https://doi.org/10.5281/zenodo.19383901
+
+**BibTeX format:**
+```bibtex
+@software{al_mutawakel_2026_19383901,
+  author       = {Al-Mutawakel, Ahmed Ali Mohammed Hasan},
+  title        = {Atheer Simulation Evaluation Artifact},
+  month        = apr,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.1.1},
+  doi          = {10.5281/zenodo.19383901},
+  url          = {https://doi.org/10.5281/zenodo.19383901}
+}
+```
+
+GitHub also reads the `CITATION.cff` file to display the "Cite this repository" option on the sidebar.
 
 ## ⚖️ License
 
