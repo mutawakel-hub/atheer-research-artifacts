@@ -1,143 +1,80 @@
-
-# Atheer System: Simulation Evaluation Artifact
+# Atheer System: Simulation Evaluation Artifact for Offline-First Mobile Payments
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19383901.svg)](https://doi.org/10.5281/zenodo.19383901)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository is a **reproducibility artifact** for the simulation-based evaluation of the "Atheer" system as described in **Section VI** of the research paper.
+This repository serves as the **reproducibility artifact** for the simulation-based evaluation of the "Atheer" system, as detailed in **Section VI** of the research paper submitted to DTISD 2026.
 
+## 📝 System Overview
+This project enables researchers and developers to reproduce and validate published results, ensuring scientific transparency and reliability. The system performs a comprehensive simulation of a **4-layer End-to-End (E2E) model**:
 
-This repository enables researchers and developers to reproduce and confirm the published results, ensuring scientific transparency and reliability.
-**Now simulates a full 4-layer End-to-End (E2E) system:**
+| Layer | Functional Description |
+| :--- | :--- |
+| **Edge Layer (SDK)** | Simulates NFC interaction and Host Card Emulation (HCE) for local cryptographic token generation. |
+| **Network Layer (Transport)** | Models data transmission via Public Internet (S1) or Private APN (S2), accounting for packet loss and latency. |
+| **Processing Layer (Atheer Switch)** | Simulates the gateway switch using Redis (idempotency) and PostgreSQL (storage) micro-latencies. |
+| **Integration Layer (Core Bank)** | Models the connection to core banking ledgers through secure API adapters. |
 
-1. **Edge Layer (SDK):** Local NFC tap and HCE cryptogram generation.
-2. **Network Layer (Transport):** Uplink/Downlink via S1 (Public Internet) or S2 (Private APN), with packet loss and latency.
-3. **Processing Layer (Atheer Switch):** Stateless Node.js middleware with Redis (idempotency) and PostgreSQL (transaction storage) micro-latencies.
-4. **Integration Layer (Core Bank):** Bank processing via API adapters.
+## 📊 Reproducible Results
+This codebase allows for the regeneration of the following figures and tables presented in the research paper:
 
-## 📄 Reproducible Results
+*   **Figure 6 (Fig. 6):** Transaction Success Rate vs. Network Load (Mean ± 95% CI).
+*   **Figure 7 (Fig. 7):** P95 End-to-End (E2E) Latency under varying traffic loads.
+*   **Table IV:** Aggregated Performance Summary (Mean ± 95% CI).
+*   **Table V:** Failure Breakdown Analysis at peak load (500 TPS).
 
-This repository reproduces (from the same simulation run) the following figures and tables from the research paper:
-
-*   **Fig. 6** — Transaction Success Rate vs Load (Mean ± 95% CI)
-*   **Fig. 7** — P95 End-to-End Latency vs Load (Mean ± 95% CI)
-*   **Table IV** — Aggregated Performance Summary (Mean ± 95% CI)
-*   **Table V** — Failure Breakdown at Max Load (50 TPS) (%)
-
-
-> **Scope Note:**
-> - This artifact now evaluates the **full E2E system** (Edge, Network, Switch, Bank).
-> - S1: Public Internet
-> - S2: Private APN (Atheer)
-> - The simulation parameters are defined in `atheer_sim.py` and mirrored in `configs/paper.yml` for documentation.
+> **Technical Note:**
+> Simulation parameters are defined in `atheer_sim.py` and mirrored in `configs/paper.yml` for precise documentation and reproducibility.
 
 ## 📂 Repository Layout
-
-*   `atheer_sim.py` — Main Discrete-Event Simulation (SimPy) file + plotting + table export.
-*   `requirements.txt` — List of required Python dependencies.
-*   `tools/build_paper_tables.py` — Optional helper tool to build paper tables from a raw CSV file.
-*   `configs/paper.yml` — Configuration file for the paper scenario setup. The simulation reads these parameters directly at runtime.
-*   `docs/` — Contains additional documentation, including `REPRODUCE.md`, `MODEL_ASSUMPTIONS.md`, and `PARAMETERS.md`.
+*   `atheer_sim.py`: Main Discrete-Event Simulation (DES) engine built with SimPy.
+*   `requirements.txt`: List of required Python dependencies.
+*   `tools/build_paper_tables.py`: Helper tool to generate formatted tables from raw simulation data.
+*   `configs/paper.yml`: Configuration file containing the specific parameters used in the paper's scenarios.
+*   `docs/`: Additional documentation including model assumptions and parameter definitions.
 
 ## ⚙️ Requirements
-
-*   Python 3.10+ (recommended)
-*   Dependencies listed in `requirements.txt`:
-    *   `simpy>=4.1`
-    *   `numpy>=1.24`
-    *   `pandas>=2.0`
-    *   `matplotlib>=3.7`
-    *   `jinja2>=3.1`
+*   **Language:** Python 3.10 or higher.
+*   **Core Dependencies:**
+    *   `simpy >= 4.1` (Event simulation management)
+    *   `numpy`, `pandas` (Data processing and analysis)
+    *   `matplotlib` (Scientific data visualization)
 
 ## 🚀 Quick Start
+To reproduce the research results, follow these steps:
 
-To reproduce the results, follow these steps:
+1. **Environment Setup:**
+   ```shell
+   python -m venv .venv
+   source .venv/bin/activate  # For Linux/macOS
+   # .venv\Scripts\activate  # For Windows
+   pip install -r requirements.txt
+   ```
 
-1.  **Install Dependencies:**
+2. **Execute Simulation:**
+   ```shell
+   python atheer_sim.py
+   ```
 
-    ```shell
-    python -m venv .venv
-
-    # For Windows:
-    .venv\Scripts\activate
-
-    # For Linux/macOS:
-    source .venv/bin/activate
-
-    pip install -r requirements.txt
-    ```
-
-2.  **Run the Simulation:**
-
-    Run the simulation from the repository root:
-
-    ```shell
-    python atheer_sim.py
-    ```
-
-    If you are running on a headless server (no GUI), you can force a non-interactive Matplotlib backend:
-
-    ```shell
-    # For Linux/macOS:
-    export MPLBACKEND=Agg
-
-    # For Windows PowerShell:
-    # setx MPLBACKEND Agg
-    ```
-
-
-## 📊 Expected Outputs & KPIs
-
-Running `python atheer_sim.py` will create an `outputs/` folder and write timestamped files within it:
-
-* **Raw per-transaction CSV file:**
-    * `outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv`
-* **Figures (Plots):**
-    * `outputs/figure_success_rate_ci_YYYYMMDD_HHMMSS.png`
-    * `outputs/figure_p95_latency_ci_YYYYMMDD_HHMMSS.png`
-* **Summary Tables:**
-    * `outputs/agg_long_YYYYMMDD_HHMMSS.csv`
-    * `outputs/agg_wide_YYYYMMDD_HHMMSS.csv`
-    * `outputs/table_wide_YYYYMMDD_HHMMSS.tex`
-* **Failure Breakdown (at max load, e.g., 50 TPS):**
-    * `outputs/failure_breakdown_YYYYMMDD_HHMMSS.csv`
-
-**Key Performance Indicators (KPIs):**
-- **Switch Overhead:** Total time spent inside the Atheer Switch (Redis + PostgreSQL + Logic). Must prove it's < 20ms.
-- **End-to-End Latency:** Total time from NFC tap to Merchant Screen response.
-- **Success Rate under Load:** Including transactions dropped due to network timeouts vs. successfully processed E2E.
-
-
-## 📝 Optional: Build Paper Tables from an Existing Raw CSV
-
-If you already have a raw simulation CSV and wish to generate paper-ready tables (including Switch Overhead), use the following command:
-
-```shell
-python tools/build_paper_tables.py \
-    --raw outputs/atheer_simulation_results_YYYYMMDD_HHMMSS.csv \
-    --out paper_artifacts
-```
-
-This will write the table artifacts into the `paper_artifacts/` folder, including the "Switch Overhead (Mean±CI)" column for IEEE tables.
-
-
-## 🐛 Troubleshooting
-
-* **Matplotlib issue on headless servers:** If you encounter issues when running the simulation on a headless server, ensure that the Matplotlib backend is set as described in the "Run the Simulation" section above.
-* **Switch/Layer parameters:** If you change Switch micro-latency parameters, update both `atheer_sim.py` and `configs/paper.yml` for documentation consistency.
-
-## 🤝 Contributing
-
-Contributions to improve this repository are welcome. Please read `CONTRIBUTING.md` (if available) for guidelines on how to contribute.
+## 📈 Key Performance Indicators (KPIs)
+*   **Switch Overhead:** Validates that the internal processing time within the Atheer Switch remains below **20ms**.
+*   **End-to-End (E2E) Latency:** Measures the total time from NFC tap to merchant confirmation.
+*   **Success Rate:** The percentage of transactions successfully completed within the defined timeout period.
 
 ## 📚 Citation
+If you utilize this work in your research, please use the following citation:
 
-If you use this software/repository in your research work, please cite it. GitHub reads the `CITATION.cff` file to display the "Cite this repository" option.
+```bibtex
+@software{al_mutawakel_2026_19383901,
+  author       = {Al-Mutawakel, Ahmed Ali Mohammed Hasan},
+  title        = {Atheer Simulation Evaluation Artifact},
+  year         = 2026,
+  version      = {v1.1.1},
+  doi          = {10.5281/zenodo.19383901},
+  url          = {https://doi.org/10.5281/zenodo.19383901}
+}
+```
 
-## ⚖️ License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-## 📧 Contact
-
-For inquiries or support, please contact the authors via the email address mentioned in the research paper or by opening an Issue in this repository.
+## ⚖️ License & Contact
+*   **License:** MIT License.
+*   **Contact:** Please refer to the author's email provided in the research paper or open an Issue in this repository.
