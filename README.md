@@ -133,10 +133,22 @@ If you use this software/repository in your research work, please cite it using 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19383901.svg)](https://doi.org/10.5281/zenodo.19383901)
 
-**APA format:**
-> Al-Mutawakel, A. A. M. H. (2026). Atheer Simulation Evaluation Artifact (v1.1.1). Zenodo. https://doi.org/10.5281/zenodo.19383901
+### IEEE Format (Recommended for DTISD/IEEE)
+> A. A. M. H. Al-Mutawakel, *Atheer Simulation Evaluation Artifact* (Version v1.1.1). Zenodo, Apr. 2026. doi: 10.5281/zenodo.19383901.
 
-**BibTeX format:**
+### APA Format (7th Edition)
+> Al-Mutawakel, A. A. M. H. (2026). *Atheer Simulation Evaluation Artifact* (Version v1.1.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.19383901
+
+### MLA Format (9th Edition)
+> Al-Mutawakel, Ahmed Ali Mohammed Hasan. *Atheer Simulation Evaluation Artifact*. Version v1.1.1, Zenodo, 2 Apr. 2026. *Zenodo*, https://doi.org/10.5281/zenodo.19383901.
+
+### Chicago Format (17th Edition)
+> Al-Mutawakel, Ahmed Ali Mohammed Hasan. *Atheer Simulation Evaluation Artifact* (version v1.1.1). Zenodo, 2026. https://doi.org/10.5281/zenodo.19383901.
+
+### Harvard Format
+> Al-Mutawakel, A.A.M.H. (2026) *Atheer Simulation Evaluation Artifact*. Version v1.1.1. Available at: https://doi.org/10.5281/zenodo.19383901.
+
+### BibTeX Format
 ```bibtex
 @software{al_mutawakel_2026_19383901,
   author       = {Al-Mutawakel, Ahmed Ali Mohammed Hasan},
@@ -146,12 +158,8 @@ If you use this software/repository in your research work, please cite it using 
   publisher    = {Zenodo},
   version      = {v1.1.1},
   doi          = {10.5281/zenodo.19383901},
-  url          = {https://doi.org/10.5281/zenodo.19383901}
+  url          = {[https://doi.org/10.5281/zenodo.19383901](https://doi.org/10.5281/zenodo.19383901)}
 }
-```
-
-GitHub also reads the `CITATION.cff` file to display the "Cite this repository" option on the sidebar.
-
 ## ⚖️ License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
