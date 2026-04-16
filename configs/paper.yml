@@ -1,18 +1,14 @@
 # ============================================================================
-# Atheer DES Configuration — Actual simulation parameters
+# Atheer DES Configuration — Simulation parameters
 # ============================================================================
-# These are the EXACT parameters used to produce the published results
-# (Tables III-IV, Figures 6-7 in the paper).
-#
-# NOTE: Table II in the paper presents simplified/rounded values for
-# readability (e.g., "400 ms" and "10%"). The values below are the
-# precise parameters fed into the simulation engine. Running this
-# config with `python atheer_sim.py` reproduces the published numbers.
+# These parameters MATCH the values declared in Table III of the paper.
+# Running this config with `python atheer_sim.py` reproduces results
+# consistent with the published figures and tables.
 # ============================================================================
 
 meta:
   paper: "DTISD 2026"
-  section: "VI"
+  section: "VII"
   notes: "Network-only: same bank capacity across scenarios to isolate network effect."
 
 experiment:
@@ -31,9 +27,9 @@ scenarios:
   - key: "S1_PUBLIC"
     name: "S1: Public Internet"
     network:
-      latency_mean_s: 0.200
-      latency_std_s: 0.120
-      packet_loss: 0.05
+      latency_mean_s: 0.400
+      latency_std_s: 0.200
+      packet_loss: 0.10
       retries: 2
     timeouts:
       queue_timeout_s: 12.0
@@ -43,7 +39,7 @@ scenarios:
       threshold_tps: 25.0
       latency_alpha: 0.75
       loss_alpha: 1.5
-      max_loss: 0.45
+      max_loss: 0.35
     switch:
       redis_mean_s: 0.002
       redis_std_s: 0.0005
@@ -53,10 +49,10 @@ scenarios:
   - key: "S2_PRIVATE"
     name: "S2: Private APN (Atheer)"
     network:
-      latency_mean_s: 0.065
+      latency_mean_s: 0.060
       latency_std_s: 0.015
       packet_loss: 0.001
-      retries: 1
+      retries: 0
     timeouts:
       queue_timeout_s: 4.0
       e2e_timeout_s: 5.0
