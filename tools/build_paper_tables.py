@@ -54,7 +54,7 @@ def main():
         switch_std = float(switch.std()) if len(switch) else np.nan
         return pd.Series({"SuccessRate": sr, "P95": p95, "P99": p99, "SwitchOverhead": switch_mean, "SwitchOverheadStd": switch_std})
 
-    per_run = df.groupby(["Scenario","Load_TPS","Run"]).apply(per_run_metrics).reset_index()
+    per_run = df.groupby(["Scenario","Load_TPS","Run"]).apply(per_run_metrics, include_groups=False).reset_index()
     agg = per_run.groupby(["Scenario","Load_TPS"]).agg(
         SR_mean=("SuccessRate","mean"),
         SR_std=("SuccessRate","std"),

@@ -24,7 +24,7 @@ def ci95_half(mean: float, std: float, n: int) -> float:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Extract paper tables (III & IV) from raw simulation CSV"
+        description="Extract paper tables (IV & V) from raw simulation CSV"
     )
     parser.add_argument("--csv", required=True, help="Path to the raw simulation CSV")
     parser.add_argument(
@@ -135,10 +135,10 @@ def main():
     load_points = sorted(agg["Load_TPS"].unique())
 
     # =====================================================================
-    # PRINT: Human-readable Table III
+    # PRINT: Human-readable Table IV
     # =====================================================================
     print("\n" + "=" * 90)
-    print("  TABLE III — E2E Performance Summary  (Mean ± 95% CI,  N=30)")
+    print("  TABLE IV — E2E Performance Summary  (Mean ± 95% CI,  N=10)")
     print("=" * 90)
     hdr = f"{'TPS':>6} | {'S1 Success(%)':>20} | {'S2 Success(%)':>20} | {'S1 P95 (s)':>18} | {'S2 P95 (s)':>18}"
     print(hdr)
@@ -154,10 +154,10 @@ def main():
         print(f"{tps:>6} | {col1:>20} | {col2:>20} | {col3:>18} | {col4:>18}")
 
     # =====================================================================
-    # PRINT: LaTeX code for Table III
+    # PRINT: LaTeX code for Table IV
     # =====================================================================
     print("\n" + "=" * 90)
-    print("  COPY-PASTE LaTeX ROWS for Table III")
+    print("  COPY-PASTE LaTeX ROWS for Table IV")
     print("=" * 90)
 
     for tps in load_points:
@@ -173,10 +173,10 @@ def main():
         print("\\hline")
 
     # =====================================================================
-    # PRINT: Human-readable Table IV (Failure Breakdown at 500 TPS)
+    # PRINT: Human-readable Table V (Failure Breakdown at 500 TPS)
     # =====================================================================
     print("\n" + "=" * 90)
-    print("  TABLE IV — Failure Breakdown at 500 TPS  (N=30)")
+    print("  TABLE V — Failure Breakdown at 500 TPS  (N=10)")
     print("=" * 90)
 
     for scen in sorted(fail_totals.keys()):
@@ -199,10 +199,10 @@ def main():
         print(f"    E2E Timeout        : {timeout_pct:.2f}%")
 
     # =====================================================================
-    # PRINT: LaTeX code for Table IV
+    # PRINT: LaTeX code for Table V
     # =====================================================================
     print("\n" + "=" * 90)
-    print("  COPY-PASTE LaTeX ROWS for Table IV")
+    print("  COPY-PASTE LaTeX ROWS for Table V")
     print("=" * 90)
 
     for scen in sorted(fail_totals.keys()):
