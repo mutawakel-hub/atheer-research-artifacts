@@ -1,6 +1,7 @@
 # Atheer System: Simulation Evaluation Artifact for Offline-First Mobile Payments
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19383901.svg)](https://doi.org/10.5281/zenodo.19383901)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19616158.svg)](https://doi.org/10.5281/zenodo.19616158)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository serves as the **reproducibility artifact** for the simulation-based evaluation of the "Atheer" system, as detailed in **Section VII** of the research paper submitted to DTISD 2026.
@@ -70,8 +71,8 @@ If you utilize this work in your research, please use the following citation:
   title        = {Atheer Simulation Evaluation Artifact},
   year         = 2026,
   version      = {v1.2.0},
-  doi          = {10.5281/zenodo.19383901},
-  url          = {https://doi.org/10.5281/zenodo.19383901}
+  doi          = {10.5281/zenodo.19616158},
+  url          = {https://doi.org/10.5281/zenodo.19616158}
 }
 ```
 
