@@ -1,7 +1,7 @@
 
-# Reproducing Section VI (4-Layer E2E Model)
+# Reproducing Section VII (4-Layer E2E Model)
 
-This guide reproduces the Section VI simulation artifact for the full 4-layer Atheer system (Edge, Network, Switch, Bank).
+This guide reproduces the Section VII simulation artifact for the full 4-layer Atheer system (Edge, Network, Switch, Bank).
 
 ## 1) Install dependencies
 
