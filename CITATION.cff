@@ -11,8 +11,8 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.19383901
     description: "Zenodo Artifact DOI"
-version: "v1.1.1"
-date-released: "2026-04-02"
+version: "v1.2.0"
+date-released: "2026-04-17"
 license: "MIT"
 keywords:
   - "discrete-event simulation"

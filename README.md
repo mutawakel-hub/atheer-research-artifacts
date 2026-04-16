@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19383901.svg)](https://doi.org/10.5281/zenodo.19383901)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository serves as the **reproducibility artifact** for the simulation-based evaluation of the "Atheer" system, as detailed in **Section VI** of the research paper submitted to DTISD 2026.
+This repository serves as the **reproducibility artifact** for the simulation-based evaluation of the "Atheer" system, as detailed in **Section VII** of the research paper submitted to DTISD 2026.
 
 ## 📝 System Overview
 This project enables researchers and developers to reproduce and validate published results, ensuring scientific transparency and reliability. The system performs a comprehensive simulation of a **4-layer End-to-End (E2E) model**:
@@ -24,7 +24,7 @@ This codebase allows for the regeneration of the following figures and tables pr
 *   **Table V:** Failure Breakdown Analysis at peak load (500 TPS).
 
 > **Technical Note:**
-> Simulation parameters are defined in `atheer_sim.py` and mirrored in `configs/paper.yml` for precise documentation and reproducibility.
+> Simulation parameters are defined in `configs/paper.yml` (the source of truth) and loaded dynamically by `atheer_sim.py` at runtime. Any parameter changes should be made in `configs/paper.yml`.
 
 ## 📂 Repository Layout
 *   `atheer_sim.py`: Main Discrete-Event Simulation (DES) engine built with SimPy.
@@ -69,7 +69,7 @@ If you utilize this work in your research, please use the following citation:
   author       = {Al-Mutawakel, Ahmed Ali Mohammed Hasan},
   title        = {Atheer Simulation Evaluation Artifact},
   year         = 2026,
-  version      = {v1.1.1},
+  version      = {v1.2.0},
   doi          = {10.5281/zenodo.19383901},
   url          = {https://doi.org/10.5281/zenodo.19383901}
 }

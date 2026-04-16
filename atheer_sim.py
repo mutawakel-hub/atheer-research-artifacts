@@ -49,10 +49,10 @@ class ScenarioConfig:
 
     # Degradation (applies only if enabled)
     enable_degradation: bool = False
-    degrade_threshold_tps: float = 10.0
-    degrade_latency_alpha: float = 0.60
+    degrade_threshold_tps: float = 25.0
+    degrade_latency_alpha: float = 0.75
     degrade_loss_alpha: float = 1.50
-    degrade_max_loss: float = 0.30
+    degrade_max_loss: float = 0.35
 
     # Switch micro-latency (set below per scenario)
     switch_redis_mean: float = 0.002
@@ -364,7 +364,7 @@ def summarize_and_plot(df: pd.DataFrame, out_dir: Path, ts: str):
         p99 = succ.quantile(0.99) if len(succ) else np.nan
         return pd.Series({"SuccessRate": sr, "P95": p95, "P99": p99})
 
-    per_run = df.groupby(["Scenario", "Load_TPS", "Run"]).apply(run_metrics).reset_index()
+    per_run = df.groupby(["Scenario", "Load_TPS", "Run"]).apply(run_metrics, include_groups=False).reset_index()
 
     agg = per_run.groupby(["Scenario", "Load_TPS"]).agg(
         SR_mean=("SuccessRate", "mean"),
@@ -453,7 +453,7 @@ def build_summary_tables(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
         p99 = succ.quantile(0.99) if len(succ) else np.nan
         return pd.Series({"SuccessRate": sr, "P95": p95, "P99": p99})
 
-    per_run = df.groupby(["Scenario", "Load_TPS", "Run"]).apply(per_run_metrics).reset_index()
+    per_run = df.groupby(["Scenario", "Load_TPS", "Run"]).apply(per_run_metrics, include_groups=False).reset_index()
 
     agg = per_run.groupby(["Scenario", "Load_TPS"]).agg(
         SR_mean=("SuccessRate", "mean"),
