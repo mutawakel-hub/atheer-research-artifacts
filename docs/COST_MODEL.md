@@ -34,7 +34,7 @@ The answer depends on three factors:
 
 ## 3. Equations
 
-### Daily Data Cost (Eq. 6 in paper)
+### Daily Data Cost
 
 Each transaction transmits P_size bytes. With N_txn transactions per day:
 
@@ -44,7 +44,7 @@ Total MB per day    = (N_txn × P_size) / 1,048,576
 Daily cost          = (N_txn × P_size / 1,048,576) × P_data
 ```
 
-### Daily MDR Revenue (Eq. 7 in paper)
+### Daily MDR Revenue
 
 Each transaction generates MDR revenue equal to the transaction amount times the MDR rate:
 
@@ -52,7 +52,7 @@ Each transaction generates MDR revenue equal to the transaction amount times the
 Daily revenue = N_txn × A_avg × r_MDR
 ```
 
-### Cost Ratio (Eq. 8 in paper)
+### Cost Ratio
 
 The percentage of MDR revenue consumed by data cost:
 

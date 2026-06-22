@@ -1,4 +1,4 @@
-# Contributing to Atheer Research Artifacts
+# Contributing to the Atheer Simulation Artifact
 
 Thank you for your interest in contributing! This project welcomes contributions from researchers, engineers, and practitioners working on offline payment systems, mobile security, and financial inclusion.
 
@@ -6,14 +6,14 @@ Thank you for your interest in contributing! This project welcomes contributions
 
 ## 🐛 Reporting Issues
 
-If you find a bug, an error in the paper, or a problem with the simulation:
+If you find a bug, an error in the simulation, or an issue with the results:
 
 1. **Search existing issues** first to avoid duplicates
 2. **Open a new issue** with:
    - Clear title and description
    - Steps to reproduce (for code issues)
    - Expected vs. actual behavior
-   - Relevant environment info (Python version, OS, LaTeX engine)
+   - Relevant environment info (Python version, OS)
    - Screenshots if applicable
 
 ---
@@ -48,10 +48,6 @@ For new features, scenarios, or analyses:
    
    # Regenerate figures
    python scripts/figures/generate_figures.py
-   
-   # Compile papers
-   cd paper_en && tectonic main.tex
-   cd ../paper_ar && tectonic main.tex
    ```
 5. **Update documentation** if needed (README, CHANGELOG, docs/)
 6. **Commit with clear messages**:
@@ -95,14 +91,6 @@ def sample_network_latency_ms(
     ...
 ```
 
-### LaTeX (Paper Sources)
-
-- Use `\begin{table*}` for wide tables (not `tabularx` with X columns)
-- Cite references with `\cite{key}` (no spaces)
-- Use `\ref{}` for cross-references with non-breaking space (`Section~\ref{sec:intro}`)
-- Wrap long equations in `align` or `multline` (not `equation` with `\quad`)
-- All figures need `\caption{}` and `\label{}`
-
 ---
 
 ## 📊 Adding New Simulation Scenarios
@@ -125,29 +113,11 @@ To add a new scenario (e.g., S3: Hybrid Routing):
 4. **Update documentation**:
    - `docs/SIMULATION_PARAMETERS.md` — justify new parameters
    - `CHANGELOG.md` — describe the new scenario
-   - Paper LaTeX — add results table and discussion
 
 5. **Test thoroughly**:
    - Run simulation with new scenario
    - Verify figures render correctly
    - Check statistical significance
-
----
-
-## 📝 Updating the Paper
-
-### English Version (`paper_en/`)
-
-- IEEE Conference format (2-column)
-- Compile with: `tectonic main.tex`
-- Verify all tables fit within column or page width
-
-### Arabic Version (`paper_ar/`)
-
-- XeLaTeX + polyglossia + bidi (RTL)
-- **Critical**: Load all packages BEFORE polyglossia (which loads bidi)
-- Bundled Amiri fonts — no system font installation required
-- Compile with: `tectonic main.tex` or `xelatex main.tex && xelatex main.tex`
 
 ---
 
@@ -174,6 +144,6 @@ Be respectful, constructive, and inclusive. We follow the [Contributor Covenant]
 ## ❓ Questions?
 
 - **Issues**: [GitHub Issues](https://github.com/mutawakel-hub/atheer-research-artifacts/issues)
-- **Email**: nabil.almekhlafi@su.edu.ye, a.almutawakel@su.edu.ye
+- **Email**: a.almutawakel@su.edu.ye
 
-Thank you for contributing to Atheer! 🙏
+Thank you for contributing! 🙏

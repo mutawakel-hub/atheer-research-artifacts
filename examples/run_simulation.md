@@ -1,12 +1,12 @@
 # How to Reproduce the Simulation Results
 
-This guide walks you through reproducing the simulation results reported in the Atheer paper.
+This guide walks you through reproducing the simulation results in this artifact.
 
 ---
 
 ## Prerequisites
 
-- **Python 3.10 or later**
+- **Python**: 3.10 or later
 - **pip** (Python package installer)
 - **~50 MB free disk space** (for results)
 - **~3 minutes** runtime
@@ -39,13 +39,13 @@ source venv/bin/activate
 venv\Scripts\activate
 
 # Install dependencies
-pip install simpy matplotlib numpy
+pip install -r requirements.txt
 ```
 
 ### Option B: System-wide Installation
 
 ```bash
-pip install simpy matplotlib numpy
+pip install -r requirements.txt
 ```
 
 ---
@@ -100,7 +100,7 @@ If you want to regenerate the figures from the simulation results:
 python scripts/figures/generate_figures.py
 ```
 
-This will produce 8 PNG figures in `figures/`:
+This will produce PNG figures in `figures/`:
 - `fig1_architecture.png` — 4-tier architecture diagram
 - `fig2_layered.png` — Edge and Switch layer modules
 - `fig3_interaction.png` — System interaction diagram
@@ -114,7 +114,7 @@ This will produce 8 PNG figures in `figures/`:
 
 ## Step 5: Verify Results
 
-Compare your results with those reported in the paper (Table IV in Section VII-G):
+Compare your results with the expected values:
 
 | TPS | S1 Success | S2 Success | S1 P95 (s) | S2 P95 (s) |
 |-----|------------|------------|------------|------------|
@@ -129,42 +129,6 @@ Compare your results with those reported in the paper (Table IV in Section VII-G
 
 ---
 
-## Step 6: Compile the Paper (Optional)
-
-### English Version (IEEE Conference)
-
-```bash
-cd paper_en
-tectonic main.tex
-# Output: main.pdf
-```
-
-Or with traditional LaTeX:
-```bash
-cd paper_en
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
-```
-
-### Arabic Version (XeLaTeX)
-
-```bash
-cd paper_ar
-tectonic main.tex
-# Output: main.pdf
-```
-
-Or:
-```bash
-cd paper_ar
-xelatex main.tex
-xelatex main.tex  # run twice to resolve cross-references
-```
-
----
-
 ## Troubleshooting
 
 ### Issue: `ModuleNotFoundError: No module named 'simpy'`
@@ -174,7 +138,7 @@ xelatex main.tex  # run twice to resolve cross-references
 pip install simpy
 ```
 
-### Issue: Simulation runs but results differ from paper
+### Issue: Simulation runs but results differ slightly
 
 **Possible causes**:
 1. Different Python version (we used 3.10)
@@ -183,19 +147,13 @@ pip install simpy
 
 **Solution**: The differences should be within ±0.01% for success rates. If larger, please open an issue with your environment details.
 
-### Issue: LaTeX compilation fails
-
-**For Arabic version**: Ensure all packages are loaded BEFORE polyglossia (see `paper_ar/main.tex` for correct ordering).
-
-**For English version**: Ensure you have `IEEEtran` class installed (Tectonic handles this automatically).
-
 ---
 
 ## Need Help?
 
 - **Open an issue**: https://github.com/mutawakel-hub/atheer-research-artifacts/issues
-- **Email authors**: nabil.almekhlafi@su.edu.ye, a.almutawakel@su.edu.ye
+- **Email author**: a.almutawakel@su.edu.ye
 
 ---
 
-**Estimated time to complete all steps**: 5-10 minutes (including compilation)
+**Estimated time to complete all steps**: 5-10 minutes

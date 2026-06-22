@@ -38,7 +38,7 @@ S2 represents the merchant using standard mobile data (LTE/3G) with the Atheer a
 | Load degradation α_L | 0.15 | Mild degradation. Mobile data paths are less susceptible to BGP congestion than full public internet. |
 | Load threshold λ_th | 100 TPS | Higher threshold than S1 due to SLA guarantees. |
 | Bank capacity (c) | 50 TPS | Same as S1 (architecture invariant). |
-| Payload size | 180 bytes | Optimized packet (see Figure 5): 32B routing + 32B LUK + 4B ATC + 8B amount + 16B nonce + 8B timestamp + 64B ECDSA + 28B AES-GCM IV+tag = 192B uncompressed → 180B after header compression. |
+| Payload size | 180 bytes | Optimized packet: 32B routing + 32B LUK + 4B ATC + 8B amount + 16B nonce + 8B timestamp + 64B ECDSA + 28B AES-GCM IV+tag = 192B uncompressed → 180B after header compression. |
 
 ---
 
@@ -46,7 +46,7 @@ S2 represents the merchant using standard mobile data (LTE/3G) with the Atheer a
 
 ### Mobile Data Latency: 130 ms
 
-The original v1 paper claimed 60 ms for Private APN, which was unrealistic for Yemeni conditions. The v2 value of 130 ms reflects:
+The original v1.0 simulation claimed 60 ms for Private APN, which was unrealistic for Yemeni conditions. The v2.0 value of 130 ms reflects:
 
 1. **Carrier RTT baseline**: Yemeni mobile carriers (Yemen Mobile, Sabafon, MTN, Y Telecom) typically achieve 80-150 ms RTT for domestic destinations.
 2. **TLS 1.3 overhead**: Two round trips for handshake + one for data = ~3 × 50 ms = 150 ms additional.

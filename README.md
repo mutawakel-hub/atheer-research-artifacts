@@ -1,28 +1,17 @@
-# Atheer — Offline Mobile Payment Architecture
+# Atheer Simulation Artifact
 
-> **A Flexible Offline Mobile Payment Architecture Using NFC and Host Card Emulation: A Cost-Optimized Approach for Low-Infrastructure Environments**
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-red.svg)](https://www.latex-project.org/)
-[![Simulation](https://img.shields.io/badge/SimPy-4.1+-green.svg)](https://simpy.readthedocs.io/)
-[![Paper Status](https://img.shields.io/badge/Paper-v2.0%20Revised-orange.svg)](./paper_en)
+[![SimPy 4.1+](https://img.shields.io/badge/SimPy-4.1+-green.svg)](https://simpy.readthedocs.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-2.0-orange.svg)](CHANGELOG.md)
 
-**Research artifacts, simulation code, figures, and LaTeX sources for the Atheer offline mobile payment architecture.**
+> **Discrete Event Simulation (DES) for evaluating offline mobile payment architectures.**
 
----
-
-## 📖 Overview
-
-**Atheer** is an offline-first mobile payment architecture designed for low-infrastructure environments. It combines:
-
-- **Host Card Emulation (HCE)** + **Limited Use Keys (LUKs)** for offline tokenization
-- **SoftPOS** for zero-CapEx merchant acceptance (no POS hardware required)
-- **Mobile Data Routing with Partner-Subsidized Billing** (replaces the original Private APN model in v2)
-- **Payload optimization** (180 bytes per settlement request)
-- **Cost model** proving data expenditure < 0.5% of MDR revenue
-
-The architecture was evaluated via Discrete Event Simulation (DES) across six load levels (5–500 TPS, N=10), showing **97.6% success rate** at peak load on the Mobile Data pathway versus **76.2%** on the public-internet baseline.
+This repository contains a reproducible simulation framework for evaluating an offline mobile payment architecture that uses:
+- Host Card Emulation (HCE) + Limited Use Keys (LUKs) for offline tokenization
+- SoftPOS for zero-CapEx merchant acceptance
+- Mobile Data Routing with Partner-Subsidized Billing (180-byte optimized payload)
+- A cost model proving data expenditure is a fraction of MDR revenue
 
 ---
 
@@ -30,32 +19,20 @@ The architecture was evaluated via Discrete Event Simulation (DES) across six lo
 
 ```
 atheer-research-artifacts/
-├── README.md                    # This file
-├── LICENSE                      # MIT License
-├── CHANGELOG.md                 # Version history
-├── CONTRIBUTING.md              # How to contribute
-├── CITATION.bib                 # BibTeX entry for citing this work
-├── .gitignore
+├── README.md                       # This file
+├── LICENSE                         # MIT License
+├── CHANGELOG.md                    # Version history
+├── CITATION.bib                    # BibTeX entry
+├── CONTRIBUTING.md                 # How to contribute
+├── requirements.txt                # Python dependencies
 │
-├── paper_en/                    # English paper (IEEE Conference)
-│   ├── main.tex                 # LaTeX source
-│   ├── Atheer_Paper_v2_EN.pdf   # Compiled PDF (10 pages)
-│   └── fig1-8.png               # All figures
-│
-├── paper_ar/                    # Arabic paper (XeLaTeX + polyglossia)
-│   ├── main.tex                 # LaTeX source
-│   ├── Atheer_Paper_v2_AR.pdf   # Compiled PDF (11 pages)
-│   ├── Amiri-Regular.ttf        # Bundled Arabic font
-│   ├── Amiri-Bold.ttf
-│   └── fig1-8.png
-│
-├── scripts/                     # Reproducible research scripts
+├── scripts/                        # Source code
 │   ├── simulation/
-│   │   └── atheer_simulation_v2.py    # SimPy DES engine
+│   │   └── atheer_simulation_v2.py # Main simulation engine (SimPy DES)
 │   └── figures/
-│       └── generate_figures.py        # Matplotlib figure generator
+│       └── generate_figures.py     # Plot generator (matplotlib)
 │
-├── figures/                     # Master copies of all figures (PNG, 200 DPI)
+├── figures/                        # Pre-generated figures (PNG, 200 DPI)
 │   ├── fig1_architecture.png
 │   ├── fig2_layered.png
 │   ├── fig3_interaction.png
@@ -65,69 +42,50 @@ atheer-research-artifacts/
 │   ├── fig7_p95_latency.png
 │   └── fig8_cost_model.png
 │
-├── results/                     # Simulation results
+├── results/                        # Pre-computed results
 │   └── sim_results/
-│       ├── aggregated.json      # Aggregated metrics (mean ± 95% CI)
-│       └── raw.json             # Raw per-replication data
+│       ├── aggregated.json         # Aggregated metrics (mean ± 95% CI)
+│       └── raw.json                # Raw per-replication data
 │
-├── docs/                        # Supplementary documentation
-│   ├── REVISION_NOTES.md        # v1 → v2 changes (addressing reviewer feedback)
-│   ├── SIMULATION_PARAMETERS.md # Detailed parameter justification
-│   ├── COST_MODEL.md            # Cost model derivation and sensitivity
-│   └── ETHICAL_STATEMENT.md     # Ethics and responsible research disclosure
+├── docs/                           # Documentation
+│   ├── SIMULATION_PARAMETERS.md    # Parameter justification
+│   ├── COST_MODEL.md               # Cost model derivation and sensitivity
+│   └── ETHICAL_STATEMENT.md        # Ethics disclosure
 │
-└── examples/                    # Usage examples
-    ├── run_simulation.md        # How to reproduce results
-    └── extend_model.md          # How to add new scenarios
+└── examples/                       # Usage examples
+    ├── run_simulation.md           # How to reproduce results
+    └── extend_model.md             # How to add new scenarios
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Reproduce the Simulation
+### 1. Clone and install
 
 ```bash
-# Clone this repository
 git clone https://github.com/mutawakel-hub/atheer-research-artifacts.git
 cd atheer-research-artifacts
 
-# Create a virtual environment (optional but recommended)
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 # venv\Scripts\activate   # Windows
 
-# Install dependencies
-pip install simpy matplotlib numpy
-
-# Run the simulation (takes ~2-3 minutes)
-python scripts/simulation/atheer_simulation_v2.py
-
-# Results will be saved to results/sim_results/
+pip install -r requirements.txt
 ```
 
-### 2. Regenerate Figures
+### 2. Run the simulation
+
+```bash
+python scripts/simulation/atheer_simulation_v2.py
+```
+
+**Runtime**: ~2-3 minutes (6 load levels × 2 scenarios × 10 replications)
+
+### 3. Generate figures
 
 ```bash
 python scripts/figures/generate_figures.py
-# Figures will be saved to figures/
-```
-
-### 3. Compile the Paper
-
-#### English version (IEEE Conference, Tectonic):
-```bash
-cd paper_en
-tectonic main.tex
-# Output: main.pdf
-```
-
-#### Arabic version (XeLaTeX + polyglossia):
-```bash
-cd paper_ar
-tectonic main.tex
-# Or: xelatex main.tex && xelatex main.tex
-# Output: main.pdf
 ```
 
 ---
@@ -165,81 +123,68 @@ tectonic main.tex
 
 ## 🔬 Methodology
 
-The architecture was developed using **Design Science Research (DSR)** methodology ([Hevner 2004](https://doi.org/10.2307/25148625); [Peffers 2007](https://doi.org/10.2753/MIS0742-1222240302)). Evaluation was conducted via **Discrete Event Simulation (DES)** built in Python 3.10 with [SimPy](https://simpy.readthedocs.io/) 4.1+.
+### Discrete Event Simulation (DES) with SimPy
 
-### Why simulation rather than live deployment?
+The simulation models a four-layer payment pipeline:
 
-Live testing on real banking infrastructure in an active conflict zone (Yemen) is infeasible due to:
-- Regulatory constraints on financial transactions
-- Ethical concerns about testing payment systems on real users
-- Practical risks of routing banking settlements through damaged network infrastructure
+```
+Transaction Arrival (Poisson)
+    ↓
+Edge Processing (50 ms fixed — NFC + crypto)
+    ↓
+Network Uplink (LogNormal latency + Bernoulli loss)
+    ↓
+Switch Processing (20 ms + micro-random cache lookup)
+    ↓
+Core Banking (M/M/c queue, c=50 TPS capacity)
+    ↓
+Network Downlink (LogNormal + Bernoulli loss)
+    ↓
+E2E Timeout Check
+```
 
-The DES approach allows controlled experimentation across realistic operating conditions (latency, congestion, packet loss, full loss of connectivity) with reproducible deterministic seeds.
+### Statistical Analysis
 
-See [`docs/SIMULATION_PARAMETERS.md`](./docs/SIMULATION_PARAMETERS.md) for full parameter justification.
+- **N = 10** independent replications per (scenario, load level)
+- **Deterministic seeds** for reproducibility
+- **95% Confidence Intervals** using normal approximation
+- **Warmup period**: 60 seconds (discarded)
+- **Measurement window**: 300 seconds
 
----
-
-## 📝 Version History
-
-### v2.0 (June 2026) — Current Release
-
-**Major revision** addressing peer review feedback from DTISD 2026:
-
-- ✅ Replaced **Private APN** model with **Mobile Data Routing + Partner-Subsidized Billing**
-- ✅ Added formal **180-byte payload** proof with field-by-field breakdown
-- ✅ Added explicit **Cost Model** with sensitivity analysis
-- ✅ Corrected wallet names: Jaib, Alkuraimi, MFloos, Jawali
-- ✅ Added **Ethical Statement** addressing Reviewer 2 concerns
-- ✅ Added **dual-path provisioning** addressing Reviewer 3's contradiction critique
-- ✅ Removed unverifiable claims (zero-rated APN, IaaS revenue stream)
-- ✅ Rebuilt simulation with realistic Mobile Data parameters (130ms latency, 1.5% loss)
-
-See [`CHANGELOG.md`](./CHANGELOG.md) and [`docs/REVISION_NOTES.md`](./docs/REVISION_NOTES.md) for details.
-
-### v1.0 (2024) — Original Submission
-
-Original submission to DTISD 2026 using Private APN model. **Rejected** with reviewer feedback that drove the v2 revision. The v1 source is preserved in the `v1-archive` branch for reference.
+See [`docs/SIMULATION_PARAMETERS.md`](./docs/SIMULATION_PARAMETERS.md) for parameter justification.
 
 ---
 
-## 📜 Ethical Considerations
+## ⚙️ Configuration
 
-This research follows strict ethical guidelines:
-
-1. **No testing on real banking systems** — all evaluation is via simulation
-2. **No security claims about named institutions** — wallet names appear only in market description
-3. **Fully synthetic data** — no real banking or user data used
-4. **Public pricing references only** — ITU, GSMA, Cable.co.uk for cost assumptions
-5. **Open source** — full simulation code available for independent verification
-
-See [`docs/ETHICAL_STATEMENT.md`](./docs/ETHICAL_STATEMENT.md) for the complete ethics disclosure.
+The simulation is driven by parameters in `scripts/simulation/atheer_simulation_v2.py` (constants `S1_PARAMS` and `S2_PARAMS`). To customize scenarios, edit these dataclasses and re-run.
 
 ---
 
-## 📚 Citation
+## 📝 Citation
 
-If you use this work, please cite:
+If you use this simulation artifact, please cite:
 
 ```bibtex
-@misc{atheer2026,
-  author       = {Al-Mekhlafi, Nabil and Al-Mutawakel, Ahmed},
-  title        = {Atheer: A Flexible Offline Mobile Payment Architecture Using NFC and Host Card Emulation},
-  year         = {2026},
+@misc{almutawakel2024atheer,
+  author       = {Al-Mutawakel, Ahmed},
+  title        = {Atheer Simulation Evaluation Artifact},
+  year         = {2024},
   howpublished = {GitHub Repository},
   url          = {https://github.com/mutawakel-hub/atheer-research-artifacts},
-  version      = {2.0}
+  version      = {2.0},
+  note         = {Discrete Event Simulation for offline mobile payment architecture}
 }
 ```
 
 ---
 
-## 👥 Authors
+## 👤 Author
 
-- **Nabil Al-Mekhlafi** — Faculty of Computer Science, Sana'a University, Yemen
-  - Email: nabil.almekhlafi@su.edu.ye
-- **Ahmed Al-Mutawakel** — Faculty of Computer Science, Sana'a University, Yemen
-  - Email: a.almutawakel@su.edu.ye
+**Ahmed Al-Mutawakel**
+- Affiliation: Faculty of Computer Science, Sana'a University, Yemen
+- Email: a.almutawakel@su.edu.ye
+- GitHub: [@mutawakel-hub](https://github.com/mutawakel-hub)
 
 ---
 
@@ -247,34 +192,26 @@ If you use this work, please cite:
 
 This project is licensed under the **MIT License** — see [`LICENSE`](./LICENSE) for details.
 
-- **Code** (simulation scripts, figure generators): MIT License
-- **Paper** (LaTeX sources and PDF): MIT License (allows reproduction with attribution)
-- **Figures**: MIT License (allows reuse with attribution)
-
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for guidelines on:
-- Reporting issues
-- Suggesting improvements
-- Submitting pull requests
-- Extending the simulation model
+Found a bug? Want to add a scenario? Please see [`CONTRIBUTING.md`](./CONTRIBUTING.md) and open an issue or pull request.
 
 ---
 
-## 📞 Contact
+## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/mutawakel-hub/atheer-research-artifacts/issues)
-- **Email**: nabil.almekhlafi@su.edu.ye, a.almutawakel@su.edu.ye
-- **Affiliation**: Faculty of Computer Science, Sana'a University, Yemen
+- **Email**: a.almutawakel@su.edu.ye
 
 ---
 
 ## 🙏 Acknowledgments
 
-We thank the reviewers of DTISD 2026 for their constructive feedback, which significantly improved the quality of this work. We also acknowledge the open-source community behind SimPy, Matplotlib, and LaTeX/TeX Live.
+- The [SimPy](https://simpy.readthedocs.io/) team for the excellent DES framework
+- The [Matplotlib](https://matplotlib.org/) team for visualization tools
 
 ---
 
-**If this work helps your research, please consider giving it a ⭐ on GitHub.**
+*If this artifact helps your research, please consider giving it a ⭐ on GitHub.*

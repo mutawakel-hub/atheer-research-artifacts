@@ -272,7 +272,7 @@ When adding S3, you must update both `all_results` and `raw_results` dictionarie
 If you add a new scenario but don't update `generate_figures.py`, the figures won't show the new data.
 
 ### Pitfall 4: Changing Seeds
-The deterministic seeds ensure reproducibility. If you change the seed formula, your results will differ from the paper.
+The deterministic seeds ensure reproducibility. If you change the seed formula, your results will differ from the committed reference results.
 
 ---
 

@@ -1,6 +1,6 @@
 """
-Generate all figures for the Atheer v2 paper.
-Saves PNGs to /home/z/my-project/scripts/figures/
+Generate all figures for the Atheer simulation artifact.
+Saves PNGs to figures/
 """
 
 import json
