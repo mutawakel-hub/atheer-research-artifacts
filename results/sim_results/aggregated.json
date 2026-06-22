@@ -1,0 +1,150 @@
+{
+  "S1": {
+    "5": {
+      "n": 10,
+      "success_rate_mean": 99.5003,
+      "success_rate_ci": 0.1384,
+      "p95_latency_ms_mean": 1271.657,
+      "p95_latency_ms_ci": 4.715,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 89,
+        "e2e_timeout": 0
+      }
+    },
+    "25": {
+      "n": 10,
+      "success_rate_mean": 99.4963,
+      "success_rate_ci": 0.0574,
+      "p95_latency_ms_mean": 1267.896,
+      "p95_latency_ms_ci": 3.012,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 452,
+        "e2e_timeout": 0
+      }
+    },
+    "50": {
+      "n": 10,
+      "success_rate_mean": 99.1376,
+      "success_rate_ci": 0.0384,
+      "p95_latency_ms_mean": 2143.975,
+      "p95_latency_ms_ci": 4.566,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 1546,
+        "e2e_timeout": 0
+      }
+    },
+    "100": {
+      "n": 10,
+      "success_rate_mean": 98.3755,
+      "success_rate_ci": 0.0288,
+      "p95_latency_ms_mean": 3901.829,
+      "p95_latency_ms_ci": 11.398,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 5818,
+        "e2e_timeout": 0
+      }
+    },
+    "250": {
+      "n": 10,
+      "success_rate_mean": 96.0221,
+      "success_rate_ci": 0.0536,
+      "p95_latency_ms_mean": 9164.297,
+      "p95_latency_ms_ci": 11.233,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 35059,
+        "e2e_timeout": 130
+      }
+    },
+    "500": {
+      "n": 10,
+      "success_rate_mean": 76.1545,
+      "success_rate_ci": 0.0484,
+      "p95_latency_ms_mean": 14450.95,
+      "p95_latency_ms_ci": 4.479,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 134452,
+        "e2e_timeout": 280129
+      }
+    }
+  },
+  "S2": {
+    "5": {
+      "n": 10,
+      "success_rate_mean": 98.318,
+      "success_rate_ci": 0.1498,
+      "p95_latency_ms_mean": 458.679,
+      "p95_latency_ms_ci": 2.777,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 301,
+        "e2e_timeout": 0
+      }
+    },
+    "25": {
+      "n": 10,
+      "success_rate_mean": 98.4686,
+      "success_rate_ci": 0.049,
+      "p95_latency_ms_mean": 457.624,
+      "p95_latency_ms_ci": 1.074,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 1386,
+        "e2e_timeout": 0
+      }
+    },
+    "50": {
+      "n": 10,
+      "success_rate_mean": 98.4813,
+      "success_rate_ci": 0.049,
+      "p95_latency_ms_mean": 457.74,
+      "p95_latency_ms_ci": 0.6,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 2733,
+        "e2e_timeout": 0
+      }
+    },
+    "100": {
+      "n": 10,
+      "success_rate_mean": 98.4755,
+      "success_rate_ci": 0.0404,
+      "p95_latency_ms_mean": 457.541,
+      "p95_latency_ms_ci": 0.541,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 5485,
+        "e2e_timeout": 0
+      }
+    },
+    "250": {
+      "n": 10,
+      "success_rate_mean": 98.1736,
+      "success_rate_ci": 0.0257,
+      "p95_latency_ms_mean": 537.856,
+      "p95_latency_ms_ci": 0.582,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 16403,
+        "e2e_timeout": 0
+      }
+    },
+    "500": {
+      "n": 10,
+      "success_rate_mean": 97.6087,
+      "success_rate_ci": 0.0234,
+      "p95_latency_ms_mean": 672.137,
+      "p95_latency_ms_ci": 0.385,
+      "failure_breakdown_total": {
+        "uplink_loss": 0,
+        "downlink_loss": 42952,
+        "e2e_timeout": 0
+      }
+    }
+  }
+}

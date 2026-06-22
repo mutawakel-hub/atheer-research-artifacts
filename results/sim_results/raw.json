@@ -1,0 +1,1830 @@
+{
+  "S1": {
+    "5": [
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1198,
+        "total": 1759,
+        "success": 1745,
+        "failures": 14,
+        "success_rate": 99.2040932347925,
+        "p95_latency_ms": 1257.7090680916835,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 14,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1205,
+        "total": 1852,
+        "success": 1844,
+        "failures": 8,
+        "success_rate": 99.56803455723542,
+        "p95_latency_ms": 1280.839324407431,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 8,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1212,
+        "total": 1719,
+        "success": 1709,
+        "failures": 10,
+        "success_rate": 99.41826643397323,
+        "p95_latency_ms": 1275.1464795792629,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 10,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1219,
+        "total": 1825,
+        "success": 1820,
+        "failures": 5,
+        "success_rate": 99.72602739726028,
+        "p95_latency_ms": 1274.2683982510243,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 5,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1226,
+        "total": 1747,
+        "success": 1738,
+        "failures": 9,
+        "success_rate": 99.4848311390956,
+        "p95_latency_ms": 1259.658971997652,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 9,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1233,
+        "total": 1775,
+        "success": 1770,
+        "failures": 5,
+        "success_rate": 99.71830985915493,
+        "p95_latency_ms": 1270.8850637143883,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 5,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1240,
+        "total": 1835,
+        "success": 1832,
+        "failures": 3,
+        "success_rate": 99.83651226158038,
+        "p95_latency_ms": 1272.958943728753,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1247,
+        "total": 1778,
+        "success": 1770,
+        "failures": 8,
+        "success_rate": 99.55005624296963,
+        "p95_latency_ms": 1280.1374588439103,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 8,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1254,
+        "total": 1835,
+        "success": 1820,
+        "failures": 15,
+        "success_rate": 99.1825613079019,
+        "p95_latency_ms": 1271.1558412431004,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 15,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S1: Public Internet",
+        "seed": 1261,
+        "total": 1751,
+        "success": 1739,
+        "failures": 12,
+        "success_rate": 99.31467732724157,
+        "p95_latency_ms": 1273.8121434509821,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 12,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "25": [
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1198,
+        "total": 9008,
+        "success": 8965,
+        "failures": 43,
+        "success_rate": 99.52264653641207,
+        "p95_latency_ms": 1271.8016534491028,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 43,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1205,
+        "total": 9051,
+        "success": 9018,
+        "failures": 33,
+        "success_rate": 99.63539940338084,
+        "p95_latency_ms": 1269.0536440059645,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 33,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1212,
+        "total": 8953,
+        "success": 8903,
+        "failures": 50,
+        "success_rate": 99.44152797944822,
+        "p95_latency_ms": 1271.5137308234716,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 50,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1219,
+        "total": 8919,
+        "success": 8872,
+        "failures": 47,
+        "success_rate": 99.47303509362037,
+        "p95_latency_ms": 1269.316713589038,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 47,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1226,
+        "total": 9050,
+        "success": 9006,
+        "failures": 44,
+        "success_rate": 99.51381215469614,
+        "p95_latency_ms": 1275.789637241303,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 44,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1233,
+        "total": 9158,
+        "success": 9112,
+        "failures": 46,
+        "success_rate": 99.49770692290893,
+        "p95_latency_ms": 1258.831457427334,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 46,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1240,
+        "total": 8867,
+        "success": 8832,
+        "failures": 35,
+        "success_rate": 99.60527799706777,
+        "p95_latency_ms": 1268.2519196546878,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 35,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1247,
+        "total": 8948,
+        "success": 8885,
+        "failures": 63,
+        "success_rate": 99.29593205185516,
+        "p95_latency_ms": 1266.9731808468612,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 63,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1254,
+        "total": 8797,
+        "success": 8750,
+        "failures": 47,
+        "success_rate": 99.46572695237012,
+        "p95_latency_ms": 1263.2229645791426,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 47,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S1: Public Internet",
+        "seed": 1261,
+        "total": 9010,
+        "success": 8966,
+        "failures": 44,
+        "success_rate": 99.51165371809101,
+        "p95_latency_ms": 1264.2075686679277,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 44,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "50": [
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1198,
+        "total": 17981,
+        "success": 17819,
+        "failures": 162,
+        "success_rate": 99.09904899616262,
+        "p95_latency_ms": 2144.932439031081,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 162,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1205,
+        "total": 17865,
+        "success": 17730,
+        "failures": 135,
+        "success_rate": 99.24433249370277,
+        "p95_latency_ms": 2130.2669469688453,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 135,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1212,
+        "total": 17914,
+        "success": 17753,
+        "failures": 161,
+        "success_rate": 99.10126158311935,
+        "p95_latency_ms": 2133.0334139418987,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 161,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1219,
+        "total": 17962,
+        "success": 17819,
+        "failures": 143,
+        "success_rate": 99.20387484689901,
+        "p95_latency_ms": 2144.7774852550765,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 143,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1226,
+        "total": 17998,
+        "success": 17837,
+        "failures": 161,
+        "success_rate": 99.10545616179576,
+        "p95_latency_ms": 2148.3400228235896,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 161,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1233,
+        "total": 17712,
+        "success": 17563,
+        "failures": 149,
+        "success_rate": 99.15876242095754,
+        "p95_latency_ms": 2147.430613528762,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 149,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1240,
+        "total": 18045,
+        "success": 17885,
+        "failures": 160,
+        "success_rate": 99.11332779163203,
+        "p95_latency_ms": 2140.4437091053123,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 160,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1247,
+        "total": 17959,
+        "success": 17802,
+        "failures": 157,
+        "success_rate": 99.12578651372571,
+        "p95_latency_ms": 2147.6088372297113,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 157,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1254,
+        "total": 17797,
+        "success": 17653,
+        "failures": 144,
+        "success_rate": 99.19087486655054,
+        "p95_latency_ms": 2149.180837269853,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 144,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S1: Public Internet",
+        "seed": 1261,
+        "total": 17993,
+        "success": 17819,
+        "failures": 174,
+        "success_rate": 99.03295726115712,
+        "p95_latency_ms": 2153.7406626818693,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 174,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "100": [
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1198,
+        "total": 35481,
+        "success": 34900,
+        "failures": 581,
+        "success_rate": 98.36250387531355,
+        "p95_latency_ms": 3869.5619209618712,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 581,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1205,
+        "total": 35867,
+        "success": 35255,
+        "failures": 612,
+        "success_rate": 98.2936961552402,
+        "p95_latency_ms": 3916.3913407916198,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 612,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1212,
+        "total": 35918,
+        "success": 35337,
+        "failures": 581,
+        "success_rate": 98.38242663845426,
+        "p95_latency_ms": 3915.190178962291,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 581,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1219,
+        "total": 35860,
+        "success": 35294,
+        "failures": 566,
+        "success_rate": 98.42163970998327,
+        "p95_latency_ms": 3876.3926227907605,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 566,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1226,
+        "total": 35656,
+        "success": 35085,
+        "failures": 571,
+        "success_rate": 98.39858649315684,
+        "p95_latency_ms": 3909.175633492964,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 571,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1233,
+        "total": 35743,
+        "success": 35158,
+        "failures": 585,
+        "success_rate": 98.36331589402121,
+        "p95_latency_ms": 3901.289632312114,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 585,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1240,
+        "total": 35774,
+        "success": 35174,
+        "failures": 600,
+        "success_rate": 98.32280427125846,
+        "p95_latency_ms": 3896.8923835714263,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 600,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1247,
+        "total": 36025,
+        "success": 35452,
+        "failures": 573,
+        "success_rate": 98.40943789035393,
+        "p95_latency_ms": 3926.7349429036926,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 573,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1254,
+        "total": 35958,
+        "success": 35400,
+        "failures": 558,
+        "success_rate": 98.44818955448022,
+        "p95_latency_ms": 3914.7586204999243,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 558,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S1: Public Internet",
+        "seed": 1261,
+        "total": 35863,
+        "success": 35272,
+        "failures": 591,
+        "success_rate": 98.35206201377464,
+        "p95_latency_ms": 3891.9049126466944,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 591,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "250": [
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1198,
+        "total": 88243,
+        "success": 84688,
+        "failures": 3555,
+        "success_rate": 95.97135183527305,
+        "p95_latency_ms": 9143.558606038567,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3541,
+          "e2e_timeout": 14
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1205,
+        "total": 88392,
+        "success": 84902,
+        "failures": 3490,
+        "success_rate": 96.05167888496696,
+        "p95_latency_ms": 9164.435571772912,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3480,
+          "e2e_timeout": 10
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1212,
+        "total": 88794,
+        "success": 85267,
+        "failures": 3527,
+        "success_rate": 96.02788476698876,
+        "p95_latency_ms": 9177.083884431142,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3513,
+          "e2e_timeout": 14
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1219,
+        "total": 88226,
+        "success": 84702,
+        "failures": 3524,
+        "success_rate": 96.00571260172738,
+        "p95_latency_ms": 9194.625921470277,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3508,
+          "e2e_timeout": 16
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1226,
+        "total": 88009,
+        "success": 84621,
+        "failures": 3388,
+        "success_rate": 96.15039370973423,
+        "p95_latency_ms": 9136.89306634457,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3375,
+          "e2e_timeout": 13
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1233,
+        "total": 88792,
+        "success": 85079,
+        "failures": 3713,
+        "success_rate": 95.81831696549239,
+        "p95_latency_ms": 9155.476592165143,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3703,
+          "e2e_timeout": 10
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1240,
+        "total": 88871,
+        "success": 85390,
+        "failures": 3481,
+        "success_rate": 96.08308672120263,
+        "p95_latency_ms": 9151.917665282648,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3473,
+          "e2e_timeout": 8
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1247,
+        "total": 88322,
+        "success": 84832,
+        "failures": 3490,
+        "success_rate": 96.04854962523494,
+        "p95_latency_ms": 9185.463005894519,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3479,
+          "e2e_timeout": 11
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1254,
+        "total": 88623,
+        "success": 85088,
+        "failures": 3535,
+        "success_rate": 96.01119348250454,
+        "p95_latency_ms": 9166.302612333468,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3512,
+          "e2e_timeout": 23
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S1: Public Internet",
+        "seed": 1261,
+        "total": 88316,
+        "success": 84830,
+        "failures": 3486,
+        "success_rate": 96.05281036278816,
+        "p95_latency_ms": 9167.213532697986,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 3475,
+          "e2e_timeout": 11
+        }
+      }
+    ],
+    "500": [
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1198,
+        "total": 173515,
+        "success": 132047,
+        "failures": 41468,
+        "success_rate": 76.10120162521972,
+        "p95_latency_ms": 14452.453306384981,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13382,
+          "e2e_timeout": 28086
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1205,
+        "total": 173749,
+        "success": 132137,
+        "failures": 41612,
+        "success_rate": 76.05050964322096,
+        "p95_latency_ms": 14459.164588396512,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13516,
+          "e2e_timeout": 28096
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1212,
+        "total": 174745,
+        "success": 133183,
+        "failures": 41562,
+        "success_rate": 76.21562848722424,
+        "p95_latency_ms": 14454.470937022521,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13565,
+          "e2e_timeout": 27997
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1219,
+        "total": 174132,
+        "success": 132465,
+        "failures": 41667,
+        "success_rate": 76.07160085452416,
+        "p95_latency_ms": 14449.885561786332,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13443,
+          "e2e_timeout": 28224
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1226,
+        "total": 174765,
+        "success": 133367,
+        "failures": 41398,
+        "success_rate": 76.3121906560238,
+        "p95_latency_ms": 14432.749694731341,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13342,
+          "e2e_timeout": 28056
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1233,
+        "total": 174157,
+        "success": 132613,
+        "failures": 41544,
+        "success_rate": 76.14566167308807,
+        "p95_latency_ms": 14450.782752679232,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13508,
+          "e2e_timeout": 28036
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1240,
+        "total": 173434,
+        "success": 132119,
+        "failures": 41315,
+        "success_rate": 76.17825801169322,
+        "p95_latency_ms": 14447.945339507285,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13291,
+          "e2e_timeout": 28024
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1247,
+        "total": 172660,
+        "success": 131462,
+        "failures": 41198,
+        "success_rate": 76.13923317502606,
+        "p95_latency_ms": 14450.842094697748,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13434,
+          "e2e_timeout": 27764
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1254,
+        "total": 174029,
+        "success": 132633,
+        "failures": 41396,
+        "success_rate": 76.21315987565292,
+        "p95_latency_ms": 14456.831813701257,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13540,
+          "e2e_timeout": 27856
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S1: Public Internet",
+        "seed": 1261,
+        "total": 173439,
+        "success": 132018,
+        "failures": 41421,
+        "success_rate": 76.11782817013474,
+        "p95_latency_ms": 14454.371606782786,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 13431,
+          "e2e_timeout": 27990
+        }
+      }
+    ]
+  },
+  "S2": {
+    "5": [
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1788,
+        "total": 1826,
+        "success": 1797,
+        "failures": 29,
+        "success_rate": 98.41182913472069,
+        "p95_latency_ms": 457.1471437018886,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 29,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1795,
+        "total": 1766,
+        "success": 1734,
+        "failures": 32,
+        "success_rate": 98.18799546998868,
+        "p95_latency_ms": 454.5406520030326,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 32,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1802,
+        "total": 1827,
+        "success": 1790,
+        "failures": 37,
+        "success_rate": 97.97482211275315,
+        "p95_latency_ms": 450.3602631453987,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 37,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1809,
+        "total": 1833,
+        "success": 1799,
+        "failures": 34,
+        "success_rate": 98.14511729405346,
+        "p95_latency_ms": 461.5358731822212,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 34,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1816,
+        "total": 1769,
+        "success": 1744,
+        "failures": 25,
+        "success_rate": 98.58677218767666,
+        "p95_latency_ms": 459.4831639116137,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 25,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1823,
+        "total": 1750,
+        "success": 1725,
+        "failures": 25,
+        "success_rate": 98.57142857142858,
+        "p95_latency_ms": 458.55283644789324,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 25,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1830,
+        "total": 1742,
+        "success": 1707,
+        "failures": 35,
+        "success_rate": 97.99081515499427,
+        "p95_latency_ms": 455.9264159008478,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 35,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1837,
+        "total": 1884,
+        "success": 1857,
+        "failures": 27,
+        "success_rate": 98.56687898089172,
+        "p95_latency_ms": 466.44208107466056,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 27,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1844,
+        "total": 1751,
+        "success": 1725,
+        "failures": 26,
+        "success_rate": 98.51513420902342,
+        "p95_latency_ms": 461.90193965301773,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 26,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 5,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1851,
+        "total": 1751,
+        "success": 1720,
+        "failures": 31,
+        "success_rate": 98.22958309537407,
+        "p95_latency_ms": 460.8977863731809,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 31,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "25": [
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1788,
+        "total": 9098,
+        "success": 8947,
+        "failures": 151,
+        "success_rate": 98.34029457023522,
+        "p95_latency_ms": 458.524132285703,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 151,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1795,
+        "total": 8966,
+        "success": 8827,
+        "failures": 139,
+        "success_rate": 98.44969886236895,
+        "p95_latency_ms": 457.84699720547906,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 139,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1802,
+        "total": 9017,
+        "success": 8877,
+        "failures": 140,
+        "success_rate": 98.44737717644449,
+        "p95_latency_ms": 455.94573800588023,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 140,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1809,
+        "total": 9269,
+        "success": 9125,
+        "failures": 144,
+        "success_rate": 98.44643435106268,
+        "p95_latency_ms": 459.7392106381264,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 144,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1816,
+        "total": 8972,
+        "success": 8830,
+        "failures": 142,
+        "success_rate": 98.41729826125724,
+        "p95_latency_ms": 458.2878423019281,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 142,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1823,
+        "total": 9015,
+        "success": 8877,
+        "failures": 138,
+        "success_rate": 98.46921797004991,
+        "p95_latency_ms": 454.34896988803075,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 138,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1830,
+        "total": 9081,
+        "success": 8943,
+        "failures": 138,
+        "success_rate": 98.4803435744962,
+        "p95_latency_ms": 458.1666789897554,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 138,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1837,
+        "total": 9046,
+        "success": 8916,
+        "failures": 130,
+        "success_rate": 98.56290072960424,
+        "p95_latency_ms": 456.88986158148737,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 130,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1844,
+        "total": 9051,
+        "success": 8927,
+        "failures": 124,
+        "success_rate": 98.62998563694619,
+        "p95_latency_ms": 456.49682732926067,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 124,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 25,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1851,
+        "total": 8989,
+        "success": 8849,
+        "failures": 140,
+        "success_rate": 98.44254088330182,
+        "p95_latency_ms": 459.9920032313918,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 140,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "50": [
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1788,
+        "total": 17991,
+        "success": 17742,
+        "failures": 249,
+        "success_rate": 98.61597465399366,
+        "p95_latency_ms": 458.22727603376734,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 249,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1795,
+        "total": 17973,
+        "success": 17718,
+        "failures": 255,
+        "success_rate": 98.5812051410449,
+        "p95_latency_ms": 457.13454459814784,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 255,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1802,
+        "total": 18149,
+        "success": 17867,
+        "failures": 282,
+        "success_rate": 98.4461953826657,
+        "p95_latency_ms": 456.3089298741829,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 282,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1809,
+        "total": 17890,
+        "success": 17619,
+        "failures": 271,
+        "success_rate": 98.48518725544997,
+        "p95_latency_ms": 459.7175241219986,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 271,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1816,
+        "total": 17938,
+        "success": 17666,
+        "failures": 272,
+        "success_rate": 98.48366596053071,
+        "p95_latency_ms": 457.97257438196937,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 272,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1823,
+        "total": 17720,
+        "success": 17429,
+        "failures": 291,
+        "success_rate": 98.35778781038374,
+        "p95_latency_ms": 457.99722688997235,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 291,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1830,
+        "total": 18108,
+        "success": 17828,
+        "failures": 280,
+        "success_rate": 98.4537221117738,
+        "p95_latency_ms": 458.48808180255674,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 280,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1837,
+        "total": 18099,
+        "success": 17827,
+        "failures": 272,
+        "success_rate": 98.4971545389248,
+        "p95_latency_ms": 457.0522234114094,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 272,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1844,
+        "total": 18048,
+        "success": 17756,
+        "failures": 292,
+        "success_rate": 98.38209219858156,
+        "p95_latency_ms": 457.5899286406866,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 292,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 50,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1851,
+        "total": 18056,
+        "success": 17787,
+        "failures": 269,
+        "success_rate": 98.51019051838725,
+        "p95_latency_ms": 456.90916487684774,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 269,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "100": [
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1788,
+        "total": 36220,
+        "success": 35663,
+        "failures": 557,
+        "success_rate": 98.46217559359471,
+        "p95_latency_ms": 457.07475052956426,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 557,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1795,
+        "total": 36318,
+        "success": 35808,
+        "failures": 510,
+        "success_rate": 98.59573765075169,
+        "p95_latency_ms": 457.5605014260873,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 510,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1802,
+        "total": 36099,
+        "success": 35548,
+        "failures": 551,
+        "success_rate": 98.4736419291393,
+        "p95_latency_ms": 457.1692078380636,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 551,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1809,
+        "total": 35793,
+        "success": 35228,
+        "failures": 565,
+        "success_rate": 98.42147906015143,
+        "p95_latency_ms": 456.40636060825557,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 565,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1816,
+        "total": 35795,
+        "success": 35281,
+        "failures": 514,
+        "success_rate": 98.56404525771755,
+        "p95_latency_ms": 458.4416513323504,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 514,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1823,
+        "total": 35749,
+        "success": 35182,
+        "failures": 567,
+        "success_rate": 98.41394164871745,
+        "p95_latency_ms": 458.283037771281,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 567,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1830,
+        "total": 35978,
+        "success": 35404,
+        "failures": 574,
+        "success_rate": 98.40458057701929,
+        "p95_latency_ms": 457.3283754857309,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 574,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1837,
+        "total": 35822,
+        "success": 35265,
+        "failures": 557,
+        "success_rate": 98.44508960973704,
+        "p95_latency_ms": 457.10208956728593,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 557,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1844,
+        "total": 36172,
+        "success": 35611,
+        "failures": 561,
+        "success_rate": 98.44907663386044,
+        "p95_latency_ms": 459.2750138521353,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 561,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 100,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1851,
+        "total": 35860,
+        "success": 35331,
+        "failures": 529,
+        "success_rate": 98.52481873954267,
+        "p95_latency_ms": 456.7672215272296,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 529,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "250": [
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1788,
+        "total": 90311,
+        "success": 88669,
+        "failures": 1642,
+        "success_rate": 98.18183831426957,
+        "p95_latency_ms": 537.9780268224863,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1642,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1795,
+        "total": 89776,
+        "success": 88211,
+        "failures": 1565,
+        "success_rate": 98.25677241133488,
+        "p95_latency_ms": 537.3894015253882,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1565,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1802,
+        "total": 89861,
+        "success": 88201,
+        "failures": 1660,
+        "success_rate": 98.15270250720557,
+        "p95_latency_ms": 536.8110862141577,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1660,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1809,
+        "total": 89508,
+        "success": 87906,
+        "failures": 1602,
+        "success_rate": 98.21021584662823,
+        "p95_latency_ms": 538.1794066449999,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1602,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1816,
+        "total": 89326,
+        "success": 87702,
+        "failures": 1624,
+        "success_rate": 98.18194030853279,
+        "p95_latency_ms": 537.9062157321641,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1624,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1823,
+        "total": 89778,
+        "success": 88107,
+        "failures": 1671,
+        "success_rate": 98.13874223083606,
+        "p95_latency_ms": 537.8982230639906,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1671,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1830,
+        "total": 89918,
+        "success": 88230,
+        "failures": 1688,
+        "success_rate": 98.12273404657577,
+        "p95_latency_ms": 538.4249527917859,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1688,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1837,
+        "total": 89973,
+        "success": 88292,
+        "failures": 1681,
+        "success_rate": 98.13166172073844,
+        "p95_latency_ms": 539.4863845151576,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1681,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1844,
+        "total": 90060,
+        "success": 88441,
+        "failures": 1619,
+        "success_rate": 98.20230957139685,
+        "p95_latency_ms": 538.4189830309083,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1619,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 250,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1851,
+        "total": 89593,
+        "success": 87942,
+        "failures": 1651,
+        "success_rate": 98.15722210440548,
+        "p95_latency_ms": 536.0669521686248,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 1651,
+          "e2e_timeout": 0
+        }
+      }
+    ],
+    "500": [
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1788,
+        "total": 179955,
+        "success": 175607,
+        "failures": 4348,
+        "success_rate": 97.58384040454558,
+        "p95_latency_ms": 671.8508323658625,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4348,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1795,
+        "total": 179228,
+        "success": 175057,
+        "failures": 4171,
+        "success_rate": 97.67279666123598,
+        "p95_latency_ms": 671.8992043831875,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4171,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1802,
+        "total": 179685,
+        "success": 175292,
+        "failures": 4393,
+        "success_rate": 97.55516598491805,
+        "p95_latency_ms": 673.107767897676,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4393,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1809,
+        "total": 179706,
+        "success": 175404,
+        "failures": 4302,
+        "success_rate": 97.60608994691329,
+        "p95_latency_ms": 671.7753885545505,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4302,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1816,
+        "total": 179919,
+        "success": 175653,
+        "failures": 4266,
+        "success_rate": 97.62893301985893,
+        "p95_latency_ms": 672.7187208743999,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4266,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1823,
+        "total": 179349,
+        "success": 174954,
+        "failures": 4395,
+        "success_rate": 97.54947058528344,
+        "p95_latency_ms": 671.6901079846025,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4395,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1830,
+        "total": 179997,
+        "success": 175727,
+        "failures": 4270,
+        "success_rate": 97.62773824008177,
+        "p95_latency_ms": 671.9168769124337,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4270,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1837,
+        "total": 179809,
+        "success": 175556,
+        "failures": 4253,
+        "success_rate": 97.63471238925749,
+        "p95_latency_ms": 672.0484384237011,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4253,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1844,
+        "total": 179767,
+        "success": 175459,
+        "failures": 4308,
+        "success_rate": 97.60356461419504,
+        "p95_latency_ms": 673.0904120041714,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4308,
+          "e2e_timeout": 0
+        }
+      },
+      {
+        "tps": 500,
+        "scenario": "S2: Mobile Data (Partner-Subsidized)",
+        "seed": 1851,
+        "total": 178753,
+        "success": 174507,
+        "failures": 4246,
+        "success_rate": 97.62465525054125,
+        "p95_latency_ms": 671.2693628085731,
+        "failure_breakdown": {
+          "uplink_loss": 0,
+          "downlink_loss": 4246,
+          "e2e_timeout": 0
+        }
+      }
+    ]
+  }
+}

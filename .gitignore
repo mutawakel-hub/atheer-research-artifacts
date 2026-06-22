@@ -1,40 +1,69 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.egg-info/
-dist/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Virtual environments
-.venv/
 venv/
 env/
+ENV/
+.venv/
 
-# IDEs
-.vscode/
-.idea/
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.tdo
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
 
-# OS
+# OS-specific
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Jupyter
-.ipynb_checkpoints/
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
 
-# Secrets
-.env
-*.key
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# Output Artifacts (Uncomment if you want to push simulation results to Git)
-# outputs/
-
-# Temporary Drafts, Legacy Files & Tooling Scripts (Excluded from Git)
-_Private_Drafts_And_Tools/
-cleanup.py
-rename_inplace.py
-prepare_images.py
-
-# Ignore large output CSV files because Github max file size is 100MB
-outputs/atheer_simulation_results_*.csv
+# Local simulation outputs (keep the committed ones in results/)
+*.local.json

@@ -1,0 +1,22 @@
+# Auto-detect text files
+* text=auto
+
+# LaTeX files
+*.tex text
+*.bib text
+
+# Markdown files
+*.md text
+
+# Python files
+*.py text
+
+# JSON files
+*.json text
+
+# Binary files
+*.png binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.zip binary
