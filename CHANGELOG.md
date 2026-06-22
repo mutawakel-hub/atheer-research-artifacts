@@ -6,6 +6,45 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.0] — 2026-06-22
+
+### Repository Refocus
+
+This release refocuses the repository exclusively on the simulation artifact, removing all paper-related content and references.
+
+### Removed
+- `paper_en/` directory (English LaTeX paper source and PDF)
+- `paper_ar/` directory (Arabic LaTeX paper source, fonts, and PDF)
+- `reproduce/` directory (legacy reproduction scripts)
+- `docs/REVISION_NOTES.md` (reviewer-related content)
+- `scripts/build_arabic_paper.py` (paper build script)
+
+### Changed
+- `README.md` rewritten to focus on simulation artifact only
+- `CHANGELOG.md` cleaned of paper-related references
+- `CITATION.bib` now references only the simulation artifact (not the paper)
+- `CONTRIBUTING.md` updated to remove paper-related guidance
+- `docs/ETHICAL_STATEMENT.md` updated to remove paper references
+- `docs/SIMULATION_PARAMETERS.md` updated to remove paper references
+- `docs/COST_MODEL.md` updated to remove equation references to paper
+- `examples/run_simulation.md` updated to remove paper compilation steps
+- `examples/extend_model.md` updated to remove paper references
+
+### Final Repository Structure
+
+```
+atheer-research-artifacts/
+├── scripts/    Simulation engine + figure generation
+├── figures/    Pre-generated plots (PNG, 200 DPI)
+├── results/    Pre-computed simulation results (JSON)
+├── docs/       Simulation parameters, cost model, ethical statement
+└── examples/   Reproduction guide and extension guide
+```
+
+The repository is now a clean, self-contained simulation artifact with no dependencies on any external paper or conference submission.
+
+---
+
 ## [2.0.0] — 2026-06-22
 
 ### Major Revision

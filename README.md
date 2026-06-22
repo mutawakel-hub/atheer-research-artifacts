@@ -3,7 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![SimPy 4.1+](https://img.shields.io/badge/SimPy-4.1+-green.svg)](https://simpy.readthedocs.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.0-orange.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.1-orange.svg)](CHANGELOG.md)
 
 > **Discrete Event Simulation (DES) for evaluating offline mobile payment architectures.**
 
@@ -172,7 +172,7 @@ If you use this simulation artifact, please cite:
   year         = {2024},
   howpublished = {GitHub Repository},
   url          = {https://github.com/mutawakel-hub/atheer-research-artifacts},
-  version      = {2.0},
+  version      = {2.1},
   note         = {Discrete Event Simulation for offline mobile payment architecture}
 }
 ```
